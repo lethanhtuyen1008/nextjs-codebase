@@ -1,5 +1,5 @@
 import * as React from "react";
-import Layout from "@Components/Layout";
+import Layout from "@Components/layout";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
