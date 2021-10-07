@@ -1,8 +1,21 @@
 import type { NextPage } from "next";
-import styles from "../styles/Home.module.css";
+import Button from "@Components/materialUI/button";
+import { useRouter } from "next/router";
 
 const Home: NextPage = () => {
-    return <div className={styles.container}>index page</div>;
+    const router = useRouter();
+
+    return (
+        <div>
+            <Button
+                variant="contained"
+                color="secondary"
+                onClick={() => router.push("/home")}
+            >
+                Start loading
+            </Button>
+        </div>
+    );
 };
 
 export default Home;

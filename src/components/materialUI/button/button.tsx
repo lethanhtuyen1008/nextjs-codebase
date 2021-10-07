@@ -1,4 +1,4 @@
-import { Button as MaterialButton, ButtonProps } from "@material-ui/core";
+import { Button as MaterialButton, ButtonProps } from "@mui/material";
 import * as React from "react";
 import useStyles from "./style";
 
@@ -15,7 +15,6 @@ const Button = (props: ButtonProps) => {
                 outlined: classes.outlined,
                 outlinedPrimary: classes.outlinedPrimary,
                 outlinedSecondary: classes.outlinedSecondary,
-                label: classes.label,
             }}
             {...props}
         />

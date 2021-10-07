@@ -1,4 +1,4 @@
-import { createTheme } from "@material-ui/core/styles";
+import { createTheme } from "@mui/material/styles";
 import Color from "color";
 import colors from "./colors";
 import variables from "./variables";
@@ -89,11 +89,6 @@ const theme = createTheme({
     },
     shape: {
         borderRadius: 5,
-    },
-    props: {
-        MuiTab: {
-            disableRipple: true,
-        },
     },
     mixins: {
         toolbar: {
