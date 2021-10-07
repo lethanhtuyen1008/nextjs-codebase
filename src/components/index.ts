@@ -1,1 +1,1 @@
-export { default } from "@Components/layoutComponent";
+export { default } from "@Components/layout";

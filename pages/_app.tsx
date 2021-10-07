@@ -7,14 +7,17 @@ import variables from "src/themes/variables";
 import { Provider } from "react-redux";
 import { Spinner } from "src/components/materialUI/spinner";
 import { store } from "src/redux/store";
+import Layout from "@Components/layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
         <ThemeProvider theme={{ ...theme, colors, variables, styles }}>
-            <Provider store={store}>
-                <Component {...pageProps} />
-                <Spinner />
-            </Provider>
+            <Layout>
+                <Provider store={store}>
+                    <Component {...pageProps} />
+                    <Spinner />
+                </Provider>
+            </Layout>
         </ThemeProvider>
     );
 }

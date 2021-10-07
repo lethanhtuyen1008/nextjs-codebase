@@ -1,14 +1,16 @@
 import * as React from "react";
-import Layout from "@Components/layoutComponent";
 import Button from "@Components/materialUI/button";
 import { useDispatch } from "react-redux";
 import { SHOW_SPINNER } from "src/redux/spinner/spinnerType";
+import { useRouter } from "next/router";
+import { NextPage } from "next";
 
-const HomePage = () => {
+const HomePage: NextPage = () => {
     const dispatch = useDispatch();
+    const router = useRouter();
 
     return (
-        <Layout>
+        <>
             <Button
                 variant="contained"
                 color="primary"
@@ -16,7 +18,14 @@ const HomePage = () => {
             >
                 Start loading
             </Button>
-        </Layout>
+            <Button
+                variant="contained"
+                color="primary"
+                onClick={() => router.push("/")}
+            >
+                Redirect
+            </Button>
+        </>
     );
 };
 
