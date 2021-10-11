@@ -6,7 +6,7 @@ export default makeStyles((theme: AppTheme) =>
         root: {
             fontSize: theme.typography.fontSize,
             backgroundColor: theme.palette.common.white,
-            color: theme.colors.blueGrey900,
+            color: theme.colors.primary,
             fontWeight: theme.typography.fontWeightMedium,
             transition: theme.transitions.create([
                 "border-color",
@@ -19,7 +19,7 @@ export default makeStyles((theme: AppTheme) =>
                 fontSize: theme.variables.fontSizeSm,
             },
             "&$disabled": {
-                backgroundColor: "transparent",
+                backgroundColor: "red",
                 boxShadow: "none",
                 borderWidth: 0,
                 color: theme.colors.black,
@@ -36,6 +36,9 @@ export default makeStyles((theme: AppTheme) =>
             },
             "&.MuiOutlinedInput-root": {
                 border: "0 none",
+            },
+            "&.MuiOutlinedInput-root:hover": {
+                border: "solid 2px",
             },
         },
         hideLabel: {

@@ -10,6 +10,7 @@ import PasswordField from "@Components/formikField/passwordField";
 import Button from "@Components/materialUI/button";
 import { Image } from "src/commons/images";
 import * as yup from "yup";
+import FormTextField from "@Components/formTextField";
 export const loginFormSchema = yup.object().shape({});
 export interface LoginFormValue {
     email: string;
@@ -64,6 +65,7 @@ const Login = () => {
                                         alt={t("ico email")}
                                         width="16"
                                         height="13"
+                                        className={classes.iconEmail}
                                     />
                                     <EmailField autoFocus />
                                 </FormControlIcon>
@@ -76,9 +78,12 @@ const Login = () => {
                                         alt={t("ico pass")}
                                         width="16"
                                         height="16"
+                                        className={classes.iconEmail}
                                     />
                                     <PasswordField />
                                 </FormControlIcon>
+
+                                <FormTextField name="name" label="Name" />
 
                                 <Box textAlign="center">
                                     <Button

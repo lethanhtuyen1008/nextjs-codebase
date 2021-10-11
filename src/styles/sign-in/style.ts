@@ -54,4 +54,7 @@ export default makeStyles((theme: AppTheme) => ({
             marginRight: spacingXHelpText,
         },
     },
+    iconEmail: {
+        marginTop: -2,
+    },
 }));
