@@ -31,7 +31,7 @@ const Login = () => {
     }, []);
 
     return (
-        <div>
+        <div className={classes.form}>
             <Box textAlign="center" className={classes.isDesktop} mb={7}>
                 logo
             </Box>
