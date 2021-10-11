@@ -10,13 +10,13 @@ const HomePage: NextPage = () => {
     const router = useRouter();
 
     return (
-        <>
+        <div>
             <Button
                 variant="contained"
                 color="primary"
                 onClick={() => dispatch({ type: SHOW_SPINNER })}
             >
-                Start loading
+                Start loading 1
             </Button>
             <Button
                 variant="contained"
