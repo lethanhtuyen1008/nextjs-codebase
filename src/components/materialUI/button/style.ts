@@ -1,6 +1,6 @@
-import { createStyles, makeStyles } from "@material-ui/core/styles";
+import { makeStyles, createStyles } from "@mui/styles";
 import { AppTheme } from "src/themes/types";
-import { alpha } from "@material-ui/core/styles";
+import { alpha } from "@mui/material";
 
 export default makeStyles((theme: AppTheme) =>
     createStyles({
@@ -8,8 +8,11 @@ export default makeStyles((theme: AppTheme) =>
             padding: "16px 45px",
             borderRadius: theme.variables.borderRadius,
             lineHeight: 1.2,
+            height: 50,
         },
-        label: {},
+        label: {
+            color: "white",
+        },
         contained: {
             boxShadow: "none",
             borderWidth: 2,

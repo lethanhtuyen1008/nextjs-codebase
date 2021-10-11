@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22.002" height="22.002" viewBox="0 0 22.002 22.002">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #dfe6e6;
+      }
+
+      .cls-2 {
+        fill: #b4bbbb;
+        stroke: rgba(0,0,0,0);
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <g id="info" transform="translate(-300.499 -654.999)">
+    <path id="Op_component_2" data-name="Op component 2" class="cls-1" d="M42,29h0c-7.3,0-11-3.7-11-11h0C31,10.7,34.7,7,42,7h0c7.3,0,11,3.7,11,11h0C53,25.306,49.3,29,42,29Z" transform="translate(269.499 647.999)"/>
+    <path id="Union_10" data-name="Union 10" class="cls-2" d="M-3258.5-851.44v-1.345h1.688v-3.656h-1.646v-1.344h3v1.344h-.01v3.656h1.689v1.345Zm1.709-8.062a.827.827,0,0,1-.259-.617.85.85,0,0,1,.259-.623.883.883,0,0,1,.652-.259.908.908,0,0,1,.651.246.8.8,0,0,1,.259.608.866.866,0,0,1-.259.637.882.882,0,0,1-.651.259A.9.9,0,0,1-3256.791-859.5Z" transform="translate(3567.8 1521.402)"/>
+  </g>
+</svg>

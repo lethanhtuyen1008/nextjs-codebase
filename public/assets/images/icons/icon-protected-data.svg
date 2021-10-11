@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48.823" height="61.905" viewBox="0 0 48.823 61.905">
+    <defs>
+        <linearGradient id="linear-gradient" x1=".5" x2=".5" y1="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#b1812c"/>
+            <stop offset=".01" stop-color="#b1812c"/>
+            <stop offset="1" stop-color="#f0e083"/>
+        </linearGradient>
+        <linearGradient id="linear-gradient-3" x1=".326" x2=".674" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#b1812c"/>
+            <stop offset=".01" stop-color="#b1812c"/>
+            <stop offset="1" stop-color="#b98c37"/>
+        </linearGradient>
+        <linearGradient id="linear-gradient-4" x1=".109" x2=".891" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#ffd182"/>
+            <stop offset="1" stop-color="#ff8b7c"/>
+        </linearGradient>
+        <style>
+            .cls-1{fill:url(#linear-gradient)}
+        </style>
+    </defs>
+    <g id="_5">
+        <path id="Rectangle_1_copy_33" d="M6.914 20H0v-6.474C0 4.562 4.71.011 14 0h.019C23.3.017 28 4.568 28 13.526V20h-6.914v-6.548C21.086 8.914 18.7 6.61 14 6.6h-.01c-4.7.009-7.076 2.312-7.076 6.847V20z" class="cls-1" transform="translate(9.745)"/>
+        <path id="Rectangle_1_copy_32" d="M522.218 1449.532h-3.027c-14.055 0-21.191-7.085-21.191-21.09v-4.9c0-7 3.568-10.545 10.6-10.545h24.218c7.028 0 10.6 3.542 10.6 10.545v4.9c-.009 14.005-7.145 21.09-21.2 21.09z" class="cls-1" transform="translate(-498 -1394.113)"/>
+        <path id="Rectangle_1_copy_34" fill="url(#linear-gradient-3)" d="M2.458 12.291v-.84C.825 10.494 0 8.722 0 6.146 0 2.065 2.069 0 6.146 0s6.146 2.065 6.146 6.146c0 2.576-.825 4.349-2.458 5.306v.84c0 2.448-1.242 3.687-3.687 3.687s-3.689-1.24-3.689-3.688z" transform="translate(16.388 27.764)"/>
+        <path id="Rectangle_1_copy_35" fill="#e2eff1" d="M535.34 1532.414c-9.511 0-14.34-.573-14.34-1.707 0-1.134 4.828-1.707 14.34-1.707 9.511 0 14.34.573 14.34 1.707-.001 1.134-4.829 1.707-14.34 1.707z" transform="translate(-513.147 -1470.509)"/>
+        <path id="Rectangle_1_copy_27" fill="url(#linear-gradient-4)" d="M557.652 805.7a5.734 5.734 0 0 0-3.447 3.418 1.088 1.088 0 0 1-1.235 1.122 1.089 1.089 0 0 1-1.235-1.122 5.734 5.734 0 0 0-3.447-3.418 1.084 1.084 0 0 1-1.088-1.23 1.084 1.084 0 0 1 1.088-1.23 5.734 5.734 0 0 0 3.447-3.417 1.089 1.089 0 0 1 1.235-1.122 1.089 1.089 0 0 1 1.235 1.122 5.734 5.734 0 0 0 3.447 3.417 1.084 1.084 0 0 1 1.088 1.23 1.084 1.084 0 0 1-1.088 1.23z" transform="translate(-509.917 -784.728)"/>
+    </g>
+</svg>

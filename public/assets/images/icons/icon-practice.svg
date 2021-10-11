@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="_4" width="56.721" height="63.175" viewBox="0 0 56.721 63.175">
+    <defs>
+        <linearGradient id="linear-gradient" x1=".5" x2=".5" y1="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#41bdbf"/>
+            <stop offset="1" stop-color="#449cb3"/>
+        </linearGradient>
+        <linearGradient id="linear-gradient-3" x1=".5" x2=".5" y1="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#c6d6db"/>
+            <stop offset="1" stop-color="#eaf5f7"/>
+        </linearGradient>
+        <linearGradient id="linear-gradient-4" x1=".5" x2=".5" y1="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#c6d6db"/>
+            <stop offset=".51" stop-color="#c6d6db"/>
+            <stop offset="1" stop-color="#eaf5f7"/>
+        </linearGradient>
+        <style>
+            .cls-1{fill:url(#linear-gradient)}
+        </style>
+    </defs>
+    <path id="Shape_2_copy_2" d="M519.125 1129.081c-.545.125-1.042.279-1.643.44l-12.206 3.271c-.125.034-.245.062-.363.089a4.324 4.324 0 0 1-4.329-2.012l-.061.016-3.365-12.56.061-.016c.122-2.306 1.586-3.846 4.376-4.593l12.04-3.226c.164-.044.318-.088.476-.133l5.017 18.723z" class="cls-1" transform="translate(-491.671 -1091.104)"/>
+    <path id="Shape_2_copy_5" d="M534.085 1165.2zm-1.649.442a8.282 8.282 0 0 1-.989.265l6.513 8.267c2.491 3.132 2.5 6.183-.109 8.959l-.989 1.053c-2.647 2.817-5.21 2.427-7.5-1.018L519.9 1169h-.033c.118-.027.238-.056.363-.089l12.206-3.271z" class="cls-1" transform="translate(-506.63 -1127.219)"/>
+    <path id="Shape_2_copy_3" fill="url(#linear-gradient-3)" d="M530.893 1105.16a29.78 29.78 0 0 0-7.65-3.235l-7.018-1.607c-.816-.209-3.375-.275-7.649.7l-5.05-18.847c4.215-1.184 6.412-2.529 7-3.108l5.274-4.9a29.668 29.668 0 0 0 5.014-6.6zm-49.117-6.252l-.374-1.4c-.993-3.707.379-6.084 4.072-7.074l1.1-.295 3.365 12.56-1.1.295c-3.692.993-6.069-.38-7.063-4.087z" transform="translate(-481.089 -1062.92)"/>
+    <path id="Shape_2_copy_6" fill="#e2eff1" d="M548.34 1232.414c-9.511 0-14.34-.573-14.34-1.707 0-1.134 4.828-1.707 14.34-1.707 9.511 0 14.34.573 14.34 1.707-.001 1.134-4.829 1.707-14.34 1.707z" transform="translate(-515.935 -1169.239)"/>
+    <path id="Shape_2_copy_4" fill="url(#linear-gradient-4)" d="M599.513 1054.15h.013c2.184-.585 3.589.223 4.174 2.407l10.209 38.1c.585 2.185-.227 3.587-2.411 4.172h-.013c-2.184.585-3.723-.445-4.308-2.629l-10.074-37.6c-.586-2.178.226-3.865 2.41-4.45z" transform="translate(-557.372 -1053.962)"/>
+</svg>

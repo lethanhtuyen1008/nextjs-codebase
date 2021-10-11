@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60.09" height="61.114" viewBox="0 0 60.09 61.114">
+    <defs>
+        <linearGradient id="linear-gradient" x1=".5" x2=".5" y1="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#b0c4d2"/>
+            <stop offset="1" stop-color="#eaf5f7"/>
+        </linearGradient>
+        <linearGradient id="linear-gradient-2" x1=".5" x2=".5" y1="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#bcccd4"/>
+            <stop offset="1" stop-color="#eaf5f7"/>
+        </linearGradient>
+        <linearGradient id="linear-gradient-3" x1=".5" x2=".5" y1="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#c6d6db"/>
+            <stop offset="1" stop-color="#eaf5f7"/>
+        </linearGradient>
+        <linearGradient id="linear-gradient-4" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#673d9b"/>
+            <stop offset="1" stop-color="#9b3d93"/>
+        </linearGradient>
+        <style>
+            .cls-6{fill:url(#linear-gradient-4)}
+        </style>
+    </defs>
+    <g id="_6">
+        <path id="Shape_2_copy_10" fill="#e2eff1" d="M506.045 1825.78c-19.928 0-30.045-.8-30.045-2.39 0-1.587 10.117-2.39 30.045-2.39s30.045.8 30.045 2.39c0 1.587-10.117 2.39-30.045 2.39z" transform="translate(-476 -1764.666)"/>
+        <path id="Rectangle_1_copy_19" fill="url(#linear-gradient)" d="M528.142 1720.627h-20.485c-9.058 0-13.657-4.588-13.657-13.657v-27.313c0-9.069 4.6-13.657 13.657-13.657h20.485c9.058 0 13.657 4.588 13.657 13.657v27.313c.001 9.069-4.599 13.657-13.657 13.657z" transform="translate(-487.854 -1662.585)"/>
+        <path id="Rectangle_1_copy_21" fill="url(#linear-gradient-2)" d="M528.142 1715.627h-20.485c-9.058 0-13.657-4.588-13.657-13.657v-27.313c0-9.069 4.6-13.656 13.657-13.656h20.485c9.058 0 13.657 4.588 13.657 13.656v27.313c.001 9.069-4.599 13.657-13.657 13.657z" transform="translate(-487.854 -1659.293)"/>
+        <path id="Rectangle_1_copy_20" fill="url(#linear-gradient-3)" d="M528.142 1710.627h-20.485c-9.058 0-13.657-4.588-13.657-13.657v-27.313c0-9.069 4.6-13.657 13.657-13.657h20.485c9.058 0 13.657 4.588 13.657 13.657v27.313c.001 9.069-4.599 13.657-13.657 13.657z" transform="translate(-487.854 -1656)"/>
+        <path id="Rectangle_1_copy_17" fill="#a4b4c4" d="M8.631 8c-.862 0-1.3-.468-1.3-1.391s.436-1.392 1.3-1.392h14.738c.862 0 1.3.469 1.3 1.392S24.231 8 23.369 8zM1.289 2.783C.433 2.783 0 2.314 0 1.391S.433 0 1.289 0h29.422C31.567 0 32 .468 32 1.391s-.433 1.391-1.289 1.391z" transform="translate(13.29 40.55)"/>
+        <path id="Rectangle_1_copy_23" d="M554.484 1736.218l-1.857-1.618a1.6 1.6 0 0 0-2.263-.031l-2.215 1.649c-1.573 1.193-3.149.448-3.149-1.365V1727h12.632v7.853c0 1.813-1.432 2.702-3.148 1.365z" class="cls-6" transform="translate(-521.442 -1702.759)"/>
+        <path id="Rectangle_1_copy_15" d="M552.861 1692.669v.007a1.159 1.159 0 0 0-.292 1.309l.232.865a1.306 1.306 0 0 1-1.042 1.8l-.862.231a1.159 1.159 0 0 0-.99.907h-.007l-.255.953a1.3 1.3 0 0 1-1.8 1.04l-.953-.255-.005.005a1.144 1.144 0 0 0-1.209.324h-.007l-.7.7a1.3 1.3 0 0 1-2.08 0l-.7-.7h-.007a1.16 1.16 0 0 0-1.314-.29l-.859.23a1.306 1.306 0 0 1-1.8-1.042l-.231-.862a1.159 1.159 0 0 0-.908-.991v-.007l-.953-.255a1.3 1.3 0 0 1-1.04-1.8l.255-.953-.005-.005a1.143 1.143 0 0 0-.324-1.209v-.007l-.7-.7a1.3 1.3 0 0 1 0-2.08l.7-.7v-.007a1.159 1.159 0 0 0 .292-1.309l-.232-.865a1.306 1.306 0 0 1 1.042-1.8l.862-.231a1.159 1.159 0 0 0 .99-.908h.007l.255-.953a1.3 1.3 0 0 1 1.8-1.04l.953.255.005-.005a1.143 1.143 0 0 0 1.209-.324h.007l.7-.7a1.3 1.3 0 0 1 2.08 0l.7.7h.007a1.16 1.16 0 0 0 1.315.29l.859-.23a1.306 1.306 0 0 1 1.8 1.042l.231.862a1.16 1.16 0 0 0 .908.991v.007l.953.255a1.3 1.3 0 0 1 1.04 1.8l-.255.953.005.005a1.143 1.143 0 0 0 .324 1.209v.007l.7.7a1.3 1.3 0 0 1 0 2.08z" class="cls-6" transform="translate(-514.058 -1672.324)"/>
+        <path id="Rectangle_1_copy_22" fill="#fff" d="M3.258 6.233a1.02 1.02 0 0 1-.722-.36L.355 3.661a.94.94 0 0 1 .02-1.486.911.911 0 0 1 1.465-.02l1.418 1.439L6.446.36a.91.91 0 0 1 1.465.02.94.94 0 0 1 .02 1.486L3.98 5.873a1.024 1.024 0 0 1-.718.36z" transform="translate(25.732 15.491)"/>
+    </g>
+</svg>

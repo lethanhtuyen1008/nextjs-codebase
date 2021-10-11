@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27.154" height="27.036" viewBox="0 0 27.154 27.036">
+    <defs>
+        <linearGradient id="qv4cr6222b" x1=".974" x2=".026" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#ff5c77"/>
+            <stop offset=".188" stop-color="#ff5c77"/>
+            <stop offset=".926" stop-color="#ffec84"/>
+            <stop offset="1" stop-color="#ffec84"/>
+        </linearGradient>
+        <linearGradient id="tz55ttmxca" x1=".002" x2=".998" y1="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#ff5c77"/>
+            <stop offset="1" stop-color="#ffec84"/>
+        </linearGradient>
+        <linearGradient id="ac6x9sgumc" x1="0" x2="1" xlink:href="#tz55ttmxca"/>
+        <linearGradient id="0tam0eazmd" x1="1" x2="0" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#ff5c77"/>
+            <stop offset=".13" stop-color="#ff5c77"/>
+            <stop offset=".735" stop-color="#ffec84"/>
+            <stop offset="1" stop-color="#ffec84"/>
+        </linearGradient>
+    </defs>
+    <g>
+        <path fill="url(#qv4cr6222b)" d="M191.037 209.306L187.044 207a.824.824 0 0 0-1.273.327l-.761 1.318c-1.018 1.764-.621 3.183 1.176 4.221l.207.119c1.8 1.038 3.225.672 4.243-1.091l.757-1.311a.832.832 0 0 0-.356-1.277z" transform="translate(-178.221 -188.154)"/>
+        <path fill="url(#tz55ttmxca)" d="M119.883 97.8c-4.189-3.314-8.41-2.9-12.571 1.263l-4.849 4.72c-.527-.527 1.565 4.432 5.5 8.37 3.914 3.92 9.669 6.818 9.172 6.3l4.787-4.787c4.161-4.161 4.576-8.382 1.263-12.571a3.36 3.36 0 0 0-.728-2.272 5.1 5.1 0 0 0-2.574-1.023z" transform="translate(-98.374 -95.45)"/>
+        <path fill="url(#ac6x9sgumc)" d="M104.861 100.412l1.556-1.556a1.989 1.989 0 0 0 0-3.173l-.121-.121a1.989 1.989 0 0 0-3.173 0l-1.556 1.556a20.4 20.4 0 0 1 1.733 1.522 21.687 21.687 0 0 1 1.561 1.772z" transform="translate(-80.051 -94.77)"/>
+        <path fill="url(#0tam0eazmd)" d="M166.287 155.485a1.976 1.976 0 0 1-.055 3.118l-.121.121a1.989 1.989 0 0 1-3.173 0l-2.077-2.077-.457-.457-9.55-9.55-.359-.359-2.175-2.175a1.989 1.989 0 0 1 0-3.173l.121-.121a1.989 1.989 0 0 1 3.173 0z" transform="translate(-147.532 -132.48)"/>
+    </g>
+</svg>

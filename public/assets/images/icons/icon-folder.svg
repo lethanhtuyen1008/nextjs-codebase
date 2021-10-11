@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="26.728" height="24.985" viewBox="0 0 26.728 24.985">
+    <defs>
+        <linearGradient id="linear-gradient" x1=".5" x2=".5" y1="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#e95586"/>
+            <stop offset="1" stop-color="#f27269"/>
+        </linearGradient>
+        <linearGradient id="linear-gradient-2" x1=".5" x2=".5" y1="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#f2716a"/>
+            <stop offset="1" stop-color="#fff"/>
+        </linearGradient>
+        <style>
+            .cls-1{fill:url(#linear-gradient)}
+        </style>
+    </defs>
+    <g id="folder_color">
+        <path id="Rectangle_1" d="M.013 13.287V2.577A2.328 2.328 0 0 1 2.575.013h6.356a2.2 2.2 0 0 1 2.454 1.66c.015.107.035.208.059.306 0 .023.008.045.011.068h.008A2.2 2.2 0 0 0 13.9 3.641l7.944.005c3.243 0 4.9 1.648 4.895 4.895v4.722z" class="cls-1" transform="translate(-.013 -.013)"/>
+        <path id="Rectangle_1_copy" fill="url(#linear-gradient-2)" d="M18.4 32a1.277 1.277 0 0 0-1.4 1.409v3.01l21.788-.009v-3A1.244 1.244 0 0 0 37.392 32z" transform="translate(-14.532 -27.352)"/>
+        <path id="Rectangle_1_copy_2" d="M4.93 50.024C1.8 50.084.028 51.74.024 54.93v7.918c0 3.247 1.652 4.9 4.895 4.895h16.927c3.243 0 4.9-1.659 4.905-4.905v-7.919c0-3.247-1.652-4.9-4.895-4.895z" class="cls-1" transform="translate(-.023 -42.758)"/>
+    </g>
+</svg>
