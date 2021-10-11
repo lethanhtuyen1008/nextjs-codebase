@@ -25,6 +25,13 @@ const HomePage: NextPage = () => {
             >
                 Redirect
             </Button>
+            <Button
+                variant="contained"
+                color="primary"
+                onClick={() => router.push("/sign-in")}
+            >
+                Sign in
+            </Button>
             <TextField
                 id="outlined-basic"
                 label="Outlined"
