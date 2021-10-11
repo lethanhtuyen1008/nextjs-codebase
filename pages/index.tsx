@@ -12,7 +12,7 @@ const Home: NextPage = () => {
                 color="secondary"
                 onClick={() => router.push("/home")}
             >
-                Start loading
+                Home page
             </Button>
         </div>
     );
