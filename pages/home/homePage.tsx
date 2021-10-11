@@ -43,7 +43,7 @@ const HomePage: NextPage = () => {
                 label="Standard"
                 variant="standard"
             />
-        </>
+        </div>
     );
 };
 
