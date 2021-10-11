@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "staging": "nextjs-codebase",
+    "default": "nextjs-codebase"
+  }
+}
