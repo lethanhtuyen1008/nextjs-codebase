@@ -28,13 +28,13 @@ export default function App(props: AppProps) {
     return (
         <CacheProvider value={cache}>
             <ThemeProvider theme={{ ...theme, colors, variables, styles }}>
-                <CssBaseline />
                 <Layout>
                     <Provider store={store}>
                         <Component {...pageProps} />
                         <Spinner />
                     </Provider>
                 </Layout>
+                <CssBaseline />
             </ThemeProvider>
         </CacheProvider>
     );
