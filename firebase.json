@@ -8,7 +8,7 @@
         ],
         "rewrites": [{
             "source": "**",
-            "destination": "/server/pages/index.html"
+            "destination": "out/index.html"
         }]
     },
     "firestore": {
