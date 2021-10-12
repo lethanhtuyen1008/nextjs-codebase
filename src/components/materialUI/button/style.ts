@@ -6,12 +6,8 @@ export default makeStyles((theme: AppTheme) =>
     createStyles({
         root: {
             padding: "16px 45px",
-            borderRadius: theme.variables.borderRadius,
             lineHeight: 1.2,
             height: 50,
-        },
-        label: {
-            color: "white",
         },
         contained: {
             boxShadow: "none",
