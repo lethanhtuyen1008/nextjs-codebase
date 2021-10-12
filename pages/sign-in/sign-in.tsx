@@ -1,7 +1,7 @@
 import Box from "@mui/system/Box";
 import { Formik } from "formik";
 import React from "react";
-import useStyles from "../../src/styles/sign-in/style";
+import useStyles from "src/styles/sign-in/style";
 import { useTranslation } from "react-i18next";
 import { Typography } from "@mui/material";
 import FormControlIcon from "src/components/formControlIcon";
@@ -88,7 +88,7 @@ const Login = () => {
                                 <Box textAlign="center">
                                     <Button
                                         variant="contained"
-                                        color="secondary"
+                                        color="primary"
                                         type="submit"
                                         className={classes.submit}
                                     >
