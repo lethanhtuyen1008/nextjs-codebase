@@ -1,30 +1,21 @@
 import axios from "axios";
 import { NextApiRequest } from "next";
-import { apiEndpoints } from "../constants/apiEndpoints";
-import { STORE_ID, TOKEN_KEY } from "../constants/cookieKey";
+import { getGuestToken } from "src/helpers/guestUtil";
+import { getTokenFromLocal } from "src/helpers/userUtil";
+import { TOKEN_KEY } from "src/constants/cookieKey";
 import {
     HTTP_HEADER_AUTHORIZATION,
     HTTP_HEADER_DEVICE_TYPE,
     HTTP_HEADER_X_ORIGINS_TOKEN,
-} from "../constants/httpHeaders";
-import { getGuestToken } from "src/helpers/guestUtil";
-import { getTokenFromLocal } from "src/helpers/userUtil";
+} from "src/constants/httpHeaders";
 
-const hubApiInstance = axios.create({
+const baseApiInstance = axios.create({
     baseURL: process.env.NEXT_PUBLIC_API_ENDPOINT,
     headers: {
-        Accept: "application/vnd.originscannabis.v2",
         [HTTP_HEADER_DEVICE_TYPE]: "Mobile",
     },
 });
 
-const internalApiInstance = axios.create({
-    baseURL: apiEndpoints.LOCAL_API_PREFIX,
-});
-
-const wagtailApiInstance = axios.create({
-    baseURL: process.env.NEXT_PUBLIC_API_SERVER_WAGTAIL,
-});
 const authenticatedToken = (req: NextApiRequest): any => {
     const accessToken = req.cookies[TOKEN_KEY];
 
@@ -33,22 +24,22 @@ const authenticatedToken = (req: NextApiRequest): any => {
         headers[HTTP_HEADER_AUTHORIZATION] = accessToken;
     }
 
-    hubApiInstance.defaults.headers = {
-        ...hubApiInstance.defaults.headers,
+    baseApiInstance.defaults.headers = {
+        ...baseApiInstance.defaults.headers,
         ...headers,
     };
 
-    return hubApiInstance;
+    return baseApiInstance;
 };
 
 const xOriginsToken = () => {
-    hubApiInstance.defaults.headers = {
-        ...hubApiInstance.defaults.headers,
+    baseApiInstance.defaults.headers = {
+        ...baseApiInstance.defaults.headers,
         [HTTP_HEADER_X_ORIGINS_TOKEN]:
             process.env.NEXT_PUBLIC_X_ORIGINS_TOKEN || "",
     };
 
-    return hubApiInstance;
+    return baseApiInstance;
 };
 
 export const axiosInstance = {
@@ -57,24 +48,7 @@ export const axiosInstance = {
 };
 
 export const defaultFetcher = (url: string) => {
-    return hubApiInstance.get(url).then(res => res.data);
-};
-
-export const xOriginsTokenFetcher = (url: string) => {
-    return xOriginsToken()
-        .get(url)
-        .then(res => res.data);
-};
-
-export const internalApiFetcher = (url: string) => {
-    return internalApiInstance.get(url).then(res => res.data);
-};
-
-export const wagtailApiFetcher = <T>(
-    url: string,
-    params: object = {}
-): Promise<T> => {
-    return wagtailApiInstance.get(url, { params }).then(res => res.data);
+    return baseApiInstance.get(url).then(res => res.data);
 };
 
 export function commonRequester<T, R>(
@@ -94,16 +68,16 @@ export function commonRequester<T, R>(
         tokenHeaders["Authorization"] = userToken;
     }
 
-    hubApiInstance.defaults.headers = {
-        ...hubApiInstance.defaults.headers,
+    baseApiInstance.defaults.headers = {
+        ...baseApiInstance.defaults.headers,
         [HTTP_HEADER_X_ORIGINS_TOKEN]: process.env.NEXT_PUBLIC_X_ORIGINS_TOKEN,
         ...tokenHeaders,
     };
 
-    let request = hubApiInstance.post;
+    let request = baseApiInstance.post;
 
     if (method === "put") {
-        request = hubApiInstance.put;
+        request = baseApiInstance.put;
     }
 
     return request(url, data).then(res => res.data);

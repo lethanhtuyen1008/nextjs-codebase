@@ -1,4 +1,4 @@
-import { xOriginsTokenFetcher } from "src/providers/axiosInstance";
+import { defaultFetcher } from "src/providers/axiosInstance";
 import { apiEndpoints } from "src/constants/apiEndpoints";
 import useSWR from "swr";
 
@@ -10,7 +10,7 @@ function useEmployees() {
     const url = formatUrl();
     const { data, error } = useSWR<{ data: any[]; total: number }>(
         url,
-        xOriginsTokenFetcher
+        defaultFetcher
     );
 
     return {
