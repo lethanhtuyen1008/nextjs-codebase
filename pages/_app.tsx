@@ -16,7 +16,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { Page } from "src/types/page";
 import createEmotionCache from "src/createEmotionCache";
 import { useRouter } from "next/router";
-
+import "src/helpers/i18n";
 const clientSideEmotionCache = createEmotionCache();
 
 type Props = AppProps & {
