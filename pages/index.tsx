@@ -1,21 +1,38 @@
-import type { NextPage } from "next";
 import Button from "@Components/materialUI/button";
-import { useRouter } from "next/router";
+import { NextPage } from "next";
+import { Router, useRouter } from "next/router";
+import * as React from "react";
+import { RouteName } from "src/routers/routeName";
 
-const Home: NextPage = () => {
-    const router = useRouter();
+const HomePage: NextPage = () => {
+  const router = useRouter();
 
-    return (
-        <div>
-            <Button
-                variant="contained"
-                color="secondary"
-                onClick={() => router.push("/home")}
-            >
-                Home page
-            </Button>
-        </div>
-    );
+  return (
+    <div>
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => router.push(RouteName.HOME)}
+      >
+        Redirect
+      </Button>
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => router.push(RouteName.SIGN_IN)}
+      >
+        Sign in page
+      </Button>
+
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => router.push(RouteName.EMPLOYEE)}
+      >
+        Employee page
+      </Button>
+    </div>
+  );
 };
 
-export default Home;
+export default HomePage;

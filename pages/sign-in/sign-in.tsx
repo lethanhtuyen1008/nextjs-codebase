@@ -37,11 +37,6 @@ const SignInPage = () => {
         logo
       </Box>
 
-      <Box mb={3}>
-        <Typography align="center" component="h1" variant="h3">
-          {t("Sign in to your account")}
-        </Typography>
-      </Box>
       <Box mt={1} className={classes.form}>
         <Formik<LoginFormValue>
           initialValues={loginFormInitValues}
