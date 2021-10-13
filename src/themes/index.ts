@@ -50,9 +50,9 @@ const theme = createTheme({
       black: colors.black,
     },
     primary: {
-      main: "#4eb5b2",
-      light: "#4eb5b2",
-      dark: "#4eb5b2",
+      main: colors.primary,
+      light: colors.primaryLight,
+      dark: colors.primaryDark,
     },
     secondary: {
       main: colors.secondary,
