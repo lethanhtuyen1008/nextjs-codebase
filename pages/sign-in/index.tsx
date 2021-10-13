@@ -11,7 +11,6 @@ import { Image } from "src/commons/images";
 import FormControlIcon from "src/components/formControlIcon";
 import useStyles from "src/styles/sign-in/style";
 import * as yup from "yup";
-import Language from "src/components/language";
 export const loginFormSchema = yup.object().shape({});
 export interface LoginFormValue {
   email: string;
@@ -34,8 +33,6 @@ const SignInPage = () => {
   return (
     <div>
       <Box mt={1} className={classes.form}>
-        <Language />
-
         <Formik<LoginFormValue>
           initialValues={loginFormInitValues}
           validationSchema={loginFormSchema}
