@@ -13,7 +13,6 @@ import useEmployees from "src/hooks/useEmployees";
 import useStyles from "src/styles/sign-in/style";
 import * as yup from "yup";
 export const loginFormSchema = yup.object().shape({});
-
 export interface LoginFormValue {
     email: string;
     password: string;
@@ -32,10 +31,13 @@ const Login = () => {
         console.log(values);
     }, []);
 
-    const {} = useEmployees();
+    const { data } = useEmployees();
 
     return (
-        <div className={classes.form}>
+        <div>
+            {data?.map((item: any) => {
+                return <div key={item.id}>{item.name}</div>;
+            })}
             <Box textAlign="center" className={classes.isDesktop} mb={7}>
                 logo
             </Box>

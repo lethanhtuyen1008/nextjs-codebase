@@ -12,8 +12,10 @@ import Layout from "@Components/layout";
 import { Provider } from "react-redux";
 import { Spinner } from "src/components/materialUI/spinner";
 import { store } from "src/redux/store";
-
 export const cache = createCache({ key: "css", prepend: true });
+import { ToastContainer } from "react-toastify";
+import useCommonStyles from "src/themes/styles";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function App(props: AppProps) {
     const { Component, pageProps } = props;
@@ -28,14 +30,25 @@ export default function App(props: AppProps) {
     return (
         <CacheProvider value={cache}>
             <ThemeProvider theme={{ ...theme, colors, variables, styles }}>
-                <Layout>
-                    <Provider store={store}>
-                        <Component {...pageProps} />
-                        <Spinner />
-                    </Provider>
-                </Layout>
-                <CssBaseline />
+                <MyApp {...props} />
             </ThemeProvider>
         </CacheProvider>
+    );
+}
+
+export function MyApp(props: AppProps) {
+    const { Component, pageProps } = props;
+    const classes = useCommonStyles();
+    return (
+        <>
+            <Layout>
+                <Provider store={store}>
+                    <Component {...pageProps} />
+                    <Spinner />
+                </Provider>
+                <ToastContainer className={classes.toastify} />
+            </Layout>
+            <CssBaseline />
+        </>
     );
 }
