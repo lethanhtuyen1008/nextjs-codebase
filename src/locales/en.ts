@@ -1,3 +1,3 @@
 export default {
-  login_page_title: "Login",
+  login_page_title: "Login page",
 };
