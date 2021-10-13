@@ -1,4 +1,4 @@
-import { toast as toastBase, ToastContent, ToastOptions } from 'react-toastify';
+import { toast as toastBase, ToastContent, ToastOptions } from "react-toastify";
 
 const baseOptions: ToastOptions = {
   onOpen: () => {},
