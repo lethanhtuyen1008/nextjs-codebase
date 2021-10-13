@@ -1,6 +1,6 @@
-import { TOKEN_KEY } from "src/constants/cookieKey";
 import { getCookie, setCookie } from "./cookieUtil";
 import Cookies from "cookies";
+import { TOKEN_KEY } from "src/commons/cookieKey";
 
 export function isLogged(): boolean {
   return !!getCookie(TOKEN_KEY);
