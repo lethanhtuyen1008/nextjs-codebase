@@ -1,14 +1,13 @@
-import { InputLabel, MenuItem, Select } from "@mui/material";
 import FormControl from "@mui/material/FormControl";
 import * as React from "react";
 import { useTranslation } from "react-i18next";
 import {
-  DEFAULT_LANGUAGE,
   ENGLISH,
   LANGUAGE_EN,
   LANGUAGE_ES,
   SPANISH,
 } from "src/commons/commons";
+import Dropdown from "src/components/materialUI/dropdown";
 
 const Language = () => {
   const { i18n } = useTranslation();
@@ -26,21 +25,23 @@ const Language = () => {
   };
 
   return (
-    <FormControl variant="outlined" fullWidth>
-      <Select
-        labelId="demo-simple-select-filled-label"
-        value={language}
-        onChange={handleChange}
-      >
-        <MenuItem value={LANGUAGE_EN} selected={language === LANGUAGE_EN}>
-          {ENGLISH}
-        </MenuItem>
-
-        <MenuItem value={LANGUAGE_ES} selected={language === LANGUAGE_ES}>
-          {SPANISH}
-        </MenuItem>
-      </Select>
-    </FormControl>
+    <Dropdown
+      options={[
+        {
+          label: ENGLISH,
+          value: LANGUAGE_EN,
+        },
+        {
+          label: SPANISH,
+          value: LANGUAGE_ES,
+        },
+      ]}
+      getItemLabel={item => item.label}
+      getItemValue={item => item.value}
+      value={language}
+      onChange={handleChange}
+      label="Language"
+    />
   );
 };
 
