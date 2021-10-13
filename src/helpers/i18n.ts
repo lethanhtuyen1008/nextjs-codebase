@@ -1,22 +1,32 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import LanguageDetector from "i18next-browser-languagedetector";
-import en from "src/locales/en";
-import es from "src/locales/es";
 import {
   DEFAULT_LANGUAGE,
+  LANGUAGE,
   LANGUAGE_EN,
   LANGUAGE_ES,
 } from "src/commons/commons";
+import translationEN from "src/locales/en-US.json";
+import translationVN from "src/locales/es.json";
 
-const resources: any = { en, es };
-const LANGUAGE =
-  typeof window !== "undefined" && window.localStorage?.getItem("i18nextLng");
+const LANGUAGE_DEFAULT =
+  (typeof window !== "undefined" && window.localStorage.getItem(LANGUAGE)) ||
+  DEFAULT_LANGUAGE;
 
-const LANGUAGE_DEFAULT = LANGUAGE || DEFAULT_LANGUAGE;
+const extractResourceNamespace = (resource: any) => {
+  const resourceExtracted: any = {};
+  for (const key in resource) {
+    const [namespace, translateKey] = key.split(":");
 
-console.log(LANGUAGE_DEFAULT);
-// import Backend from 'i18next-locize-backend';
+    if (!resourceExtracted[namespace]) {
+      resourceExtracted[namespace] = {};
+    }
+
+    resourceExtracted[namespace][translateKey] = resource[key];
+  }
+
+  return resourceExtracted;
+};
 
 // OPTIONAL IF YOU LIKE TO SEE ALL (LOGIN TO TRANSLATION MANAGEMENT EDITOR)
 // 1) signup at https://locize.com/register and login
@@ -41,33 +51,32 @@ i18n
   // -> safely remove the ones not being touched for weeks/months
   // https://github.com/locize/locize-lastused
   // pass the i18n instance to react-i18next.
-
-  .use(LanguageDetector)
-
   .use(initReactI18next)
   // init i18next
   // for all options read: https://www.i18next.com/overview/configuration-options
   .init({
-    // fallbackLng: DEFAULT_LANGUAGE,
-    debug: false,
-    fallbackLng: [LANGUAGE_EN, LANGUAGE_ES],
+    fallbackLng: DEFAULT_LANGUAGE,
+    // debug: Boolean(process.env.DEBUG),
     // saveMissing: true,
     lng: LANGUAGE_DEFAULT,
+
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
     },
+    // backend: locizeOptions,
     resources: {
-      [LANGUAGE_DEFAULT]: {
-        translation: resources[LANGUAGE_DEFAULT],
+      [LANGUAGE_EN]: {
+        translation: translationEN,
+        ...extractResourceNamespace(translationEN),
+      },
+      [LANGUAGE_ES]: {
+        translation: translationVN,
+        ...extractResourceNamespace(translationVN),
       },
     },
-    // backend: locizeOptions,
     react: {
       bindI18n: "languageChanged editorSaved",
-      useSuspense: false,
     },
   });
 
 export default i18n;
-
-export const transKeys = resources[i18n.language];
