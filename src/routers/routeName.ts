@@ -1,7 +1,5 @@
-export class RouteName {
-  static readonly SIGN_IN = "/sign-in";
-  static readonly SIGN_UP = "/sign-up";
-  static readonly LOGOUT = "/logout";
-  static readonly HOME = "/";
-  static readonly EMPLOYEE = "/employee";
-}
+export const SIGN_IN = "/sign-in",
+  SIGN_UP = "/sign-up",
+  LOGOUT = "/logout",
+  HOME = "/",
+  EMPLOYEE = "/employee";

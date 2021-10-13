@@ -3,7 +3,6 @@ import PasswordField from "@Components/formikField/passwordField";
 import FormTextField from "@Components/formTextField";
 import Layout from "@Components/layout";
 import Button from "@Components/materialUI/button";
-import { Typography } from "@mui/material";
 import Box from "@mui/system/Box";
 import { Formik } from "formik";
 import React from "react";
@@ -12,6 +11,7 @@ import { Image } from "src/commons/images";
 import FormControlIcon from "src/components/formControlIcon";
 import useStyles from "src/styles/sign-in/style";
 import * as yup from "yup";
+import { transKeys } from "src/helpers/i18n";
 export const loginFormSchema = yup.object().shape({});
 export interface LoginFormValue {
   email: string;
@@ -102,7 +102,7 @@ const SignInPage = () => {
 };
 
 SignInPage.getLayout = function getLayout(page: JSX.Element) {
-  return <Layout title="Sign in">{page}</Layout>;
+  return <Layout title={transKeys.login_page_title}>{page}</Layout>;
 };
 
 export default SignInPage;

@@ -1,18 +1,14 @@
 import Layout from "@Components/layout";
 import Button from "@Components/materialUI/button";
 import React from "react";
-import { useDispatch } from "react-redux";
 import useEmployees from "src/hooks/useEmployees";
-import { SHOW_SPINNER } from "src/redux/spinner/spinnerType";
 import * as yup from "yup";
 export const loginFormSchema = yup.object().shape({});
 
 const EmployeePage = () => {
   const { data, mutate } = useEmployees();
-  const dispatch = useDispatch();
 
   const reload = () => {
-    dispatch({ type: SHOW_SPINNER });
     mutate();
   };
 

@@ -1,8 +1,8 @@
 import Button from "@Components/materialUI/button";
 import { NextPage } from "next";
-import { Router, useRouter } from "next/router";
+import { useRouter } from "next/router";
 import * as React from "react";
-import { RouteName } from "src/routers/routeName";
+import { EMPLOYEE, SIGN_IN } from "src/routers/routeName";
 
 const HomePage: NextPage = () => {
   const router = useRouter();
@@ -12,14 +12,7 @@ const HomePage: NextPage = () => {
       <Button
         variant="contained"
         color="primary"
-        onClick={() => router.push(RouteName.HOME)}
-      >
-        Redirect
-      </Button>
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={() => router.push(RouteName.SIGN_IN)}
+        onClick={() => router.push(SIGN_IN)}
       >
         Sign in page
       </Button>
@@ -27,7 +20,7 @@ const HomePage: NextPage = () => {
       <Button
         variant="contained"
         color="primary"
-        onClick={() => router.push(RouteName.EMPLOYEE)}
+        onClick={() => router.push(EMPLOYEE)}
       >
         Employee page
       </Button>

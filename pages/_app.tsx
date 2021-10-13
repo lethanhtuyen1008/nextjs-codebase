@@ -14,6 +14,7 @@ import theme from "src/themes/index";
 import styles from "src/themes/styles";
 import variables from "src/themes/variables";
 import "react-toastify/dist/ReactToastify.css";
+import { useRouter } from "next/router";
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -41,13 +42,27 @@ export default function App(props: MyAppProps) {
 }
 
 export function MyApp(props: AppProps) {
+  const router = useRouter();
   const { Component, pageProps } = props;
+  const [loading, setLoading] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleStart = (url: string) => {
+      url !== router.pathname ? setLoading(true) : setLoading(false);
+    };
+    const handleComplete = (url: string) => setLoading(false);
+
+    router.events.on("routeChangeStart", handleStart);
+    router.events.on("routeChangeComplete", handleComplete);
+    router.events.on("routeChangeError", handleComplete);
+  }, [router]);
+
   return (
     <>
       <Layout>
         <Provider store={store}>
           <Component {...pageProps} />
-          <Spinner />
+          <Spinner show={loading} />
         </Provider>
         <ToastContainer />
       </Layout>
