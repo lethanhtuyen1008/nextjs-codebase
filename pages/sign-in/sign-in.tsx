@@ -10,7 +10,6 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Image } from "src/commons/images";
 import FormControlIcon from "src/components/formControlIcon";
-import useEmployees from "src/hooks/useEmployees";
 import useStyles from "src/styles/sign-in/style";
 import * as yup from "yup";
 export const loginFormSchema = yup.object().shape({});
@@ -32,13 +31,8 @@ const SignInPage = () => {
     console.log(values);
   }, []);
 
-  const { data } = useEmployees();
-
   return (
     <div>
-      {data?.map((item: any) => {
-        return <div key={item.id}>{item.name}</div>;
-      })}
       <Box textAlign="center" className={classes.isDesktop} mb={7}>
         logo
       </Box>

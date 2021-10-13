@@ -1,25 +1,25 @@
-import axios from "axios";
+import axios, { Method } from "axios";
 import { NextApiRequest } from "next";
-import { getGuestToken } from "src/helpers/guestUtil";
-import { getTokenFromLocal } from "src/helpers/userUtil";
 import { TOKEN_KEY } from "src/constants/cookieKey";
-import {
-  HTTP_HEADER_AUTHORIZATION,
-  HTTP_HEADER_DEVICE_TYPE,
-  HTTP_HEADER_X_ORIGINS_TOKEN,
-} from "src/constants/httpHeaders";
+import { HTTP_HEADER_AUTHORIZATION } from "src/constants/httpHeaders";
+import { apiEndpoints } from "src/constants/apiEndpoints";
+
+const internalApiInstance = axios.create({
+  baseURL: apiEndpoints.LOCAL_API_PREFIX,
+});
 
 const baseApiInstance = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_ENDPOINT,
-  headers: {
-    [HTTP_HEADER_DEVICE_TYPE]: "Mobile",
-  },
 });
 
-const authenticatedToken = (req: NextApiRequest): any => {
+export const internalApiRequest = (url: string) => {
+  return internalApiInstance.get(url).then(res => res.data);
+};
+
+const authenticatedToken = (req: NextApiRequest) => {
   const accessToken = req.cookies[TOKEN_KEY];
 
-  const headers: any = {};
+  let headers: any = {};
   if (accessToken) {
     headers[HTTP_HEADER_AUTHORIZATION] = accessToken;
   }
@@ -35,39 +35,3 @@ const authenticatedToken = (req: NextApiRequest): any => {
 export const axiosInstance = {
   authenticatedToken,
 };
-
-export const defaultFetcher = (url: string) => {
-  return baseApiInstance.get(url).then(res => res.data);
-};
-
-export function commonRequester<T, R>(
-  url: string,
-  data: T,
-  method?: "post" | "put"
-): Promise<T | R> {
-  const tokenHeaders: any = {};
-  const guestToken = getGuestToken();
-  const userToken = getTokenFromLocal();
-
-  if (guestToken) {
-    tokenHeaders["authorization-guest-customer"] = guestToken;
-  }
-
-  if (userToken) {
-    tokenHeaders["Authorization"] = userToken;
-  }
-
-  baseApiInstance.defaults.headers = {
-    ...baseApiInstance.defaults.headers,
-    [HTTP_HEADER_X_ORIGINS_TOKEN]: process.env.NEXT_PUBLIC_X_ORIGINS_TOKEN,
-    ...tokenHeaders,
-  };
-
-  let request = baseApiInstance.post;
-
-  if (method === "put") {
-    request = baseApiInstance.put;
-  }
-
-  return request(url, data).then(res => res.data);
-}
