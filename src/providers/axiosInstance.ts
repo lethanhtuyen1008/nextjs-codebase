@@ -1,8 +1,8 @@
 import axios, { Method } from "axios";
 import { NextApiRequest } from "next";
-import { TOKEN_KEY } from "src/constants/cookieKey";
-import { HTTP_HEADER_AUTHORIZATION } from "src/constants/httpHeaders";
-import { apiEndpoints } from "src/constants/apiEndpoints";
+import { TOKEN_KEY } from "src/commons/cookieKey";
+import { HTTP_HEADER_AUTHORIZATION } from "src/commons/httpHeaders";
+import { apiEndpoints } from "src/commons/apiEndpoints";
 
 const internalApiInstance = axios.create({
   baseURL: apiEndpoints.LOCAL_API_PREFIX,

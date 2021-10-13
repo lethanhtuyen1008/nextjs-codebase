@@ -1,4 +1,4 @@
-import { apiEndpoints } from "src/constants/apiEndpoints";
+import { apiEndpoints } from "src/commons/apiEndpoints";
 
 export function isServerSite(): boolean {
   return typeof window === "undefined";

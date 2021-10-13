@@ -1,4 +1,4 @@
-import { apiEndpoints } from "src/constants/apiEndpoints";
+import { apiEndpoints } from "src/commons/apiEndpoints";
 import { formatString } from "src/helpers/utils";
 import useSWR from "swr";
 import { internalApiRequest } from "src/providers/axiosInstance";

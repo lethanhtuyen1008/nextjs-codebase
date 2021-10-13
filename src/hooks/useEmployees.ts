@@ -1,4 +1,4 @@
-import { apiEndpoints } from "src/constants/apiEndpoints";
+import { apiEndpoints } from "src/commons/apiEndpoints";
 import useSWR from "swr";
 import { internalApiRequest } from "src/providers/axiosInstance";
 import React from "react";
