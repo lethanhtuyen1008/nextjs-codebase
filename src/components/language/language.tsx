@@ -1,4 +1,3 @@
-import FormControl from "@mui/material/FormControl";
 import * as React from "react";
 import { useTranslation } from "react-i18next";
 import {
@@ -6,6 +5,7 @@ import {
   LANGUAGE_EN,
   LANGUAGE_ES,
   SPANISH,
+  LANGUAGE,
 } from "src/commons/commons";
 import Dropdown from "src/components/materialUI/dropdown";
 
@@ -13,13 +13,14 @@ const Language = () => {
   const { i18n } = useTranslation();
   const languageDefault =
     typeof window !== "undefined"
-      ? window.localStorage?.getItem("i18nextLng")
+      ? window?.localStorage?.getItem(LANGUAGE)
       : "";
+
   const [language, setLanguage] = React.useState<string>(languageDefault || "");
 
   const handleChange = (event: any) => {
     const newLanguage: string = event.target.value as string;
-
+    window?.localStorage?.setItem(LANGUAGE, newLanguage);
     setLanguage(newLanguage);
     i18n.changeLanguage(newLanguage);
   };
@@ -38,7 +39,6 @@ const Language = () => {
       ]}
       getItemLabel={item => item.label}
       getItemValue={item => item.value}
-      defaultValue={languageDefault}
       value={language}
       onChange={handleChange}
     />
