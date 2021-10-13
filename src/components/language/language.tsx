@@ -38,9 +38,9 @@ const Language = () => {
       ]}
       getItemLabel={item => item.label}
       getItemValue={item => item.value}
+      defaultValue={languageDefault}
       value={language}
       onChange={handleChange}
-      label="Language"
     />
   );
 };
