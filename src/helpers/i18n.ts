@@ -71,7 +71,6 @@ export default i18n;
 
 const reourceData = resources[LANGUAGE_DEFAULT];
 type arrType = typeof reourceData;
-
 let objectData: any = {};
 
 Object.entries(reourceData).forEach(([key]) => {

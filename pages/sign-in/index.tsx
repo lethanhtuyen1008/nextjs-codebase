@@ -27,6 +27,7 @@ const loginFormInitValues: LoginFormValue = {
 
 const SignInPage = () => {
   const classes = useStyles();
+  const { t } = useTranslation();
 
   const onSubmit = React.useCallback((values: LoginFormValue) => {
     console.log(values);
@@ -35,6 +36,7 @@ const SignInPage = () => {
   return (
     <div>
       <Box mt={1} className={classes.form}>
+        <div>{t(transKeys.login_page)}</div>
         <Language />
 
         <Formik<LoginFormValue>
@@ -100,7 +102,7 @@ const SignInPage = () => {
 };
 
 SignInPage.getLayout = function getLayout(page: JSX.Element) {
-  return <Layout title={transKeys.home_page}>{page}</Layout>;
+  return <Layout title={transKeys.login_page}>{page}</Layout>;
 };
 
 export default SignInPage;
