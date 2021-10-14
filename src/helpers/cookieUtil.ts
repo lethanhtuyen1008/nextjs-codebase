@@ -1,5 +1,5 @@
 import Cookies from "cookies";
-import { COOKIE_MAX_AGE_MINUTES } from "src/commons/commons";
+import { COOKIE_MAX_AGE_MINUTES } from "src/commons/constants";
 import { isServerSite } from "./utils";
 
 export const setCookie = (

@@ -6,7 +6,7 @@ import {
   LANGUAGE_ES,
   SPANISH,
   LANGUAGE,
-} from "src/commons/commons";
+} from "src/commons/constants";
 import Dropdown from "src/components/materialUI/dropdown";
 
 const Language = () => {
@@ -22,7 +22,7 @@ const Language = () => {
     const newLanguage: string = event.target.value as string;
     window?.localStorage?.setItem(LANGUAGE, newLanguage);
     setLanguage(newLanguage);
-    i18n.changeLanguage(newLanguage);
+    i18n?.changeLanguage(newLanguage);
   };
 
   return (

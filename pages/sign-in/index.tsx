@@ -13,6 +13,8 @@ import useStyles from "src/styles/sign-in/style";
 import * as yup from "yup";
 import Language from "src/components/language";
 export const loginFormSchema = yup.object().shape({});
+import { transKeys } from "src/helpers/i18n";
+
 export interface LoginFormValue {
   email: string;
   password: string;
@@ -102,7 +104,7 @@ const SignInPage = () => {
 SignInPage.getLayout = function getLayout(page: JSX.Element) {
   const { t } = useTranslation();
 
-  return <Layout title={t("Page Title:Login page title")}>{page}</Layout>;
+  return <Layout title={t("login_page")}>{page}</Layout>;
 };
 
 export default SignInPage;
