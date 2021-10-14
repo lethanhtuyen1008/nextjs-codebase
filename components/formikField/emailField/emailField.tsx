@@ -4,17 +4,17 @@ import { useTranslation } from "react-i18next";
 import FormTextField from "../../formTextField";
 
 const EmailField = (props: TextFieldProps) => {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
 
-    return (
-        <FormTextField
-            id="email"
-            label={t("Email")}
-            name="email"
-            autoComplete="email"
-            {...props}
-        />
-    );
+  return (
+    <FormTextField
+      id="email"
+      label={t("Email")}
+      name="email"
+      autoComplete="email"
+      {...props}
+    />
+  );
 };
 
 export default EmailField;

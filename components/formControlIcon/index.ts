@@ -1,1 +1,1 @@
-export { default } from './formControlIcon';
+export { default } from "./formControlIcon";

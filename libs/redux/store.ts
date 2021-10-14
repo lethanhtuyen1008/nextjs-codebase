@@ -6,9 +6,9 @@ import { PersistConfig, persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
 const persistConfig: PersistConfig<any> = {
-    key: "ami-sort-entity",
-    storage,
-    whitelist: [],
+  key: "ami-sort-entity",
+  storage,
+  whitelist: [],
 };
 
 const appReducer = combineReducers<RootState>(reducers);

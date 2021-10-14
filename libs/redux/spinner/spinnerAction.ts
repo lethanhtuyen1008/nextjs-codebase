@@ -1,4 +1,4 @@
-import { SHOW_SPINNER, HIDE_SPINNER } from './spinnerType';
+import { SHOW_SPINNER, HIDE_SPINNER } from "./spinnerType";
 
 export interface ShowSpinnerAction {
   type: typeof SHOW_SPINNER;

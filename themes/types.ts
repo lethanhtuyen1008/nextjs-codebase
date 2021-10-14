@@ -8,7 +8,7 @@ export type AppVariable = typeof variables;
 export type AppStyle = typeof styles;
 
 export interface AppTheme extends MUITheme {
-    colors: AppColor;
-    variables: AppVariable;
-    styles: AppStyle;
+  colors: AppColor;
+  variables: AppVariable;
+  styles: AppStyle;
 }
