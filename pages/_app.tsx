@@ -24,25 +24,6 @@ type Props = AppProps & {
   emotionCache?: EmotionCache;
 };
 
-export default function App(props: Props) {
-  const { emotionCache = clientSideEmotionCache } = props;
-
-  React.useEffect(() => {
-    const jssStyles = document.querySelector("#jss-server-side");
-    if (jssStyles) {
-      jssStyles.parentElement!.removeChild(jssStyles);
-    }
-  }, []);
-
-  return (
-    <CacheProvider value={emotionCache}>
-      <ThemeProvider theme={{ ...theme, colors, variables, styles }}>
-        <MyApp {...props} />
-      </ThemeProvider>
-    </CacheProvider>
-  );
-}
-
 export function MyApp(props: Props) {
   const { Component, pageProps } = props;
   const classes = useCommonStyles();
@@ -72,3 +53,24 @@ export function MyApp(props: Props) {
     </>
   );
 }
+
+function App(props: Props) {
+  const { emotionCache = clientSideEmotionCache } = props;
+
+  React.useEffect(() => {
+    const jssStyles = document.querySelector("#jss-server-side");
+    if (jssStyles) {
+      jssStyles.parentElement!.removeChild(jssStyles);
+    }
+  }, []);
+
+  return (
+    <CacheProvider value={emotionCache}>
+      <ThemeProvider theme={{ ...theme, colors, variables, styles }}>
+        <MyApp {...props} />
+      </ThemeProvider>
+    </CacheProvider>
+  );
+}
+
+export default App;
