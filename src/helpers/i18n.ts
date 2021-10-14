@@ -69,7 +69,7 @@ i18n
 
 export default i18n;
 
-const reourceData = resources["en"];
+const reourceData = resources[LANGUAGE_DEFAULT];
 type arrType = typeof reourceData;
 
 let objectData: any = {};
