@@ -70,11 +70,11 @@ i18n
 export default i18n;
 
 const reourceData = resources[LANGUAGE_DEFAULT];
-type arrType = typeof reourceData;
-let objectData: any = {};
+type LanguageType = typeof reourceData;
+let objectData: { [key: string]: string } = {};
 
 Object.entries(reourceData).forEach(([key]) => {
   objectData[key] = key;
 });
 
-export const transKeys = objectData as arrType;
+export const transKeys = objectData as LanguageType;
