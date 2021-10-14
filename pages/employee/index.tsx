@@ -1,7 +1,7 @@
 import Layout from "@Components/layout";
 import Button from "@Components/materialUI/button";
 import React from "react";
-import useEmployees from "src/hooks/useEmployees";
+import useEmployees from "libs/hooks/useEmployees";
 import * as yup from "yup";
 export const loginFormSchema = yup.object().shape({});
 

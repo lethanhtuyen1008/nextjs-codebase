@@ -7,13 +7,13 @@ import Box from "@mui/system/Box";
 import { Formik } from "formik";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Image } from "src/commons/images";
-import FormControlIcon from "src/components/formControlIcon";
-import useStyles from "src/styles/sign-in/style";
+import { Image } from "libs/commons/images";
+import FormControlIcon from "@Components/formControlIcon";
+import useStyles from "styles/sign-in/style";
 import * as yup from "yup";
-import Language from "src/components/language";
+import Language from "@Components/language";
 export const loginFormSchema = yup.object().shape({});
-import { transKeys } from "src/helpers/i18n";
+import { transKeys } from "libs/helpers/i18n";
 
 export interface LoginFormValue {
   email: string;

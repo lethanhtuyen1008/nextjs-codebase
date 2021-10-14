@@ -1,5 +1,5 @@
-import { axiosInstance } from "src/providers/axiosInstance";
-import { buildSSRRequestUrl } from "src/helpers/utils";
+import { axiosInstance } from "libs/providers/axiosInstance";
+import { buildSSRRequestUrl } from "libs/helpers/utils";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(

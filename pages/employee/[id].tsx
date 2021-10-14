@@ -1,7 +1,7 @@
 import Layout from "@Components/layout";
 import { useRouter } from "next/router";
 import React from "react";
-import useEmployeeDetail from "src/hooks/useEmployeeDetail";
+import useEmployeeDetail from "libs/hooks/useEmployeeDetail";
 import * as yup from "yup";
 export const loginFormSchema = yup.object().shape({});
 

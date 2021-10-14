@@ -7,9 +7,9 @@ import Document, {
   DocumentContext,
 } from "next/document";
 import createEmotionServer from "@emotion/server/create-instance";
-import theme from "src/themes";
+import theme from "themes";
 import ServerStyleSheets from "@mui/styles/ServerStyleSheets";
-import createEmotionCache from "src/createEmotionCache";
+import createEmotionCache from "libs/createEmotionCache";
 
 const cache = createEmotionCache();
 const { extractCritical } = createEmotionServer(cache);

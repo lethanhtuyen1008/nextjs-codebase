@@ -1,5 +1,5 @@
-import { axiosInstance } from "src/providers/axiosInstance";
-import { apiEndpoints } from "src/commons/apiEndpoints";
+import { axiosInstance } from "libs/providers/axiosInstance";
+import { apiEndpoints } from "libs/commons/apiEndpoints";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(

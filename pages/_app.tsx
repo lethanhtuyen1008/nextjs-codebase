@@ -1,23 +1,23 @@
 import React from "react";
 import type { AppProps } from "next/app";
-import theme from "src/themes";
+import theme from "themes";
 import { CacheProvider, EmotionCache } from "@emotion/react";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import colors from "src/themes/colors";
-import styles from "src/themes/styles";
-import variables from "src/themes/variables";
+import colors from "themes/colors";
+import styles from "themes/styles";
+import variables from "themes/variables";
 import { Provider } from "react-redux";
-import { Spinner } from "src/components/materialUI/spinner";
-import { store } from "src/redux/store";
+import { Spinner } from "@Components/materialUI/spinner";
+import { store } from "libs/redux/store";
 import { ToastContainer } from "react-toastify";
-import useCommonStyles from "src/themes/styles";
+import useCommonStyles from "themes/styles";
 import "react-toastify/dist/ReactToastify.css";
-import { Page } from "src/types/page";
-import createEmotionCache from "src/createEmotionCache";
+import { Page } from "types/page";
+import createEmotionCache from "libs/createEmotionCache";
 import { useRouter } from "next/router";
 import { I18nextProvider } from "react-i18next";
-import i18n from "src/helpers/i18n";
+import i18n from "libs/helpers/i18n";
 const clientSideEmotionCache = createEmotionCache();
 
 type Props = AppProps & {
