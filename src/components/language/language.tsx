@@ -6,17 +6,18 @@ import {
   LANGUAGE_ES,
   SPANISH,
   LANGUAGE,
+  DEFAULT_LANGUAGE,
 } from "src/commons/constants";
 import Dropdown from "src/components/materialUI/dropdown";
 
 const Language = () => {
   const { i18n } = useTranslation();
   const languageDefault =
-    typeof window !== "undefined"
-      ? window?.localStorage?.getItem(LANGUAGE)
-      : "";
+    typeof window !== "undefined" && window?.localStorage?.getItem(LANGUAGE);
 
-  const [language, setLanguage] = React.useState<string>(languageDefault || "");
+  const [language, setLanguage] = React.useState<string>(
+    languageDefault || DEFAULT_LANGUAGE
+  );
 
   const handleChange = (event: any) => {
     const newLanguage: string = event.target.value as string;
