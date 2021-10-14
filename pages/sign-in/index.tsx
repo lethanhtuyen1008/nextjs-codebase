@@ -27,7 +27,6 @@ const loginFormInitValues: LoginFormValue = {
 
 const SignInPage = () => {
   const classes = useStyles();
-  const { t } = useTranslation();
 
   const onSubmit = React.useCallback((values: LoginFormValue) => {
     console.log(values);
@@ -56,7 +55,7 @@ const SignInPage = () => {
                 <FormControlIcon classes={classes.formControlEmail}>
                   <img
                     src={Image.ICO_EMAIL}
-                    alt={t("ico email")}
+                    alt={"ico email"}
                     width="16"
                     height="13"
                     className={classes.iconEmail}
@@ -67,7 +66,6 @@ const SignInPage = () => {
                 <FormControlIcon classes={classes.formControlPass}>
                   <img
                     src={Image.ICO_PASS}
-                    alt={t("ico pass")}
                     width="16"
                     height="16"
                     className={classes.iconEmail}
@@ -84,12 +82,12 @@ const SignInPage = () => {
                     type="submit"
                     className={classes.submit}
                   >
-                    {t("Login")}
+                    {"Login"}
                   </Button>
                 </Box>
 
                 <Box textAlign="center">
-                  <Button>{t("Forgot password?")}</Button>
+                  <Button>{"Forgot password?"}</Button>
                 </Box>
               </form>
             );
@@ -102,9 +100,7 @@ const SignInPage = () => {
 };
 
 SignInPage.getLayout = function getLayout(page: JSX.Element) {
-  const { t } = useTranslation();
-
-  return <Layout title={t("login_page")}>{page}</Layout>;
+  return <Layout title={transKeys.home_page}>{page}</Layout>;
 };
 
 export default SignInPage;

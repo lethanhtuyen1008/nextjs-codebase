@@ -4,18 +4,13 @@ import LanguageDetector from "i18next-browser-languagedetector";
 
 import en from "src/locales/en";
 import es from "src/locales/es";
-import {
-  DEFAULT_LANGUAGE,
-  LANGUAGE,
-  LANGUAGE_EN,
-  LANGUAGE_ES,
-} from "src/commons/constants";
+import { LANGUAGE, LANGUAGE_EN, LANGUAGE_ES } from "src/commons/constants";
 
-const resources: any = { en, es };
+const resources = { en, es };
 
-const LANGUAGE_DEFAULT =
-  (typeof window !== "undefined" && window?.localStorage?.getItem(LANGUAGE)) ||
-  DEFAULT_LANGUAGE;
+const LANGUAGE_DEFAULT: "es" | "en" =
+  ((typeof window !== "undefined" &&
+    window?.localStorage?.getItem(LANGUAGE)) as "en" | "es") || "en";
 
 // import Backend from 'i18next-locize-backend';
 
@@ -49,7 +44,7 @@ i18n
   // init i18next
   // for all options read: https://www.i18next.com/overview/configuration-options
   .init({
-    // fallbackLng: DEFAULT_LANGUAGE,
+    fallbackLng: LANGUAGE_DEFAULT,
     debug: false,
     // saveMissing: true,
     lng: LANGUAGE_DEFAULT,
@@ -74,4 +69,13 @@ i18n
 
 export default i18n;
 
-export const transKeys = resources[i18n.language];
+const reourceData = resources["en"];
+type arrType = typeof reourceData;
+
+let objectData: any = {};
+
+Object.entries(reourceData).forEach(([key]) => {
+  objectData[key] = key;
+});
+
+export const transKeys = objectData as arrType;

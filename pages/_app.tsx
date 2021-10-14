@@ -16,7 +16,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { Page } from "src/types/page";
 import createEmotionCache from "src/createEmotionCache";
 import { useRouter } from "next/router";
-import "src/helpers/i18n";
+import { I18nextProvider } from "react-i18next";
+import i18n from "src/helpers/i18n";
 const clientSideEmotionCache = createEmotionCache();
 
 type Props = AppProps & {
@@ -43,14 +44,14 @@ export function MyApp(props: Props) {
   }, [router]);
 
   return getLayout(
-    <>
+    <I18nextProvider i18n={i18n}>
       <Provider store={store}>
         <Component {...pageProps} />
         <Spinner show={loading} />
       </Provider>
       <ToastContainer className={classes.toastify} />
       <CssBaseline />
-    </>
+    </I18nextProvider>
   );
 }
 
