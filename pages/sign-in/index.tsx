@@ -9,7 +9,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Image } from "libs/commons/images";
 import FormControlIcon from "@Components/formControlIcon";
-import useStyles from "styles/sign-in/style";
+import useStyles from "styles/sign-in/styles";
 import * as yup from "yup";
 import Language from "@Components/language";
 export const loginFormSchema = yup.object().shape({});
