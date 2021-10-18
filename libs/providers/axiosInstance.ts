@@ -1,4 +1,4 @@
-import axios, { Method } from "axios";
+import axios from "axios";
 import { NextApiRequest } from "next";
 import { TOKEN_KEY } from "libs/commons/cookieKey";
 import { HTTP_HEADER_AUTHORIZATION } from "libs/commons/httpHeaders";

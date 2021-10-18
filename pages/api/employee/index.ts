@@ -10,5 +10,5 @@ export default async function handler(
     .authenticatedToken(req)
     .get(apiEndpoints.EMPLOYEE);
 
-  res.status(200).json(data.data || [{}]);
+  res.status(200).json(data?.data || [{}]);
 }

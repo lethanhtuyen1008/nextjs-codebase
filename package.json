@@ -10,6 +10,7 @@
         "export": "next export"
     },
     "dependencies": {
+        "@devblock/react-auth": "bitbucket:vinasource/wam-frontend#2.1.0",
         "@emotion/react": "^11.4.1",
         "@emotion/server": "^11.4.0",
         "@emotion/styled": "^11.3.0",
