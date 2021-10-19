@@ -1,82 +1,80 @@
 import Layout from "@Components/layout";
 import Button from "@Components/materialUI/button";
-import React from "react";
-import useEmployees from "libs/hooks/useEmployees";
-import * as yup from "yup";
-import useCreateEmployee from "libs/hooks/useCreateEmployee";
-import CircularProgress from "@mui/material/CircularProgress";
-import { toast } from "libs/helpers/toast";
-import { transKeys } from "libs/helpers/i18n";
-import { useTranslation } from "react-i18next";
+import { Grid, Pagination, Paper } from "@mui/material";
 import Box from "@mui/material/Box";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { Grid, Pagination, Paper } from "@mui/material";
+import { apiEndpoints } from "libs/commons/apiEndpoints";
+import { transKeys } from "libs/helpers/i18n";
+import { toast } from "libs/helpers/toast";
+import useCreateEmployee from "libs/hooks/useCreateEmployee";
+import React from "react";
+import { useTranslation } from "react-i18next";
 import useStyles from "styles/employee/styles";
-import { Spinner } from "@Components/materialUI/spinner";
-export const loginFormSchema = yup.object().shape({});
+import { useRouter } from "next/router";
+import { internalApiRequest } from "libs/providers/axiosInstance";
 
-const EmployeePage = () => {
-  const [page, setPage] = React.useState(1);
-  const { data, mutate, isLoading: isLoadingFetching } = useEmployees(page);
+const EmployeePage = (props: any) => {
   const { t } = useTranslation();
   const classes = useStyles();
+  const router = useRouter();
+  const { query } = router;
 
-  const { mutation, isLoading, error } = useCreateEmployee();
-
+  const { mutation, error } = useCreateEmployee();
   const reload = () => {
-    mutate();
+    const href = `employee/?page=${query?.page || 1}`;
+    router.push(href, href, { shallow: false });
   };
 
   const create = async () => {
     mutation()
       .then(() => {
         toast.success(t(transKeys.create_employee_success));
-        mutate();
+        reload();
       })
       .catch(() => {
         toast.error(error.message);
       });
   };
 
+  const onChangePage = (page: number) => {
+    const href = `employee/?page=${page}`;
+    router.push(href, href, { shallow: false });
+  };
+
   return (
     <div>
       <div className={classes.container}>
-        {isLoadingFetching ? (
-          <CircularProgress />
-        ) : (
-          <Grid container spacing={2}>
-            {data?.map((item: any) => {
-              return (
-                <Grid item sm={2} key={item.id}>
-                  <Paper elevation={2}>
-                    <Box sx={{ minWidth: 275 }}>
-                      <CardContent>
-                        <Typography variant="h5" component="div">
-                          {item.name}
-                        </Typography>
-                        <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                          {item.chucdanh}
-                        </Typography>
-                        <Typography variant="body2">
-                          {item.dienthoai}
-                        </Typography>
-                      </CardContent>
-                      <CardActions>
-                        <Button size="medium">Learn More</Button>
-                      </CardActions>
-                    </Box>
-                  </Paper>
-                </Grid>
-              );
-            })}
-          </Grid>
-        )}
+        <Grid container spacing={2}>
+          {props.data?.map((item: any) => {
+            return (
+              <Grid item sm={2} key={item.id}>
+                <Paper elevation={2}>
+                  <Box sx={{ minWidth: 275 }}>
+                    <CardContent>
+                      <Typography variant="h5" component="div">
+                        {item.name}
+                      </Typography>
+                      <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                        {item.chucdanh}
+                      </Typography>
+                      <Typography variant="body2">{item.dienthoai}</Typography>
+                    </CardContent>
+                    <CardActions>
+                      <Button size="medium">Learn More</Button>
+                    </CardActions>
+                  </Box>
+                </Paper>
+              </Grid>
+            );
+          })}
+        </Grid>
         <div className={classes.list}>
           <Pagination
             count={5}
-            onChange={(_e: any, page: number) => setPage(page)}
+            page={parseInt(props.page) || 1}
+            onChange={(_e: any, page: number) => onChangePage(page)}
           />
         </div>
 
@@ -94,6 +92,20 @@ const EmployeePage = () => {
 
 EmployeePage.getLayout = function getLayout(page: JSX.Element) {
   return <Layout title={transKeys.employee_page}>{page}</Layout>;
+};
+
+export const getServerSideProps = async (context: any) => {
+  const page = context.query.page || 1;
+
+  const data: any[] = await internalApiRequest(
+    "https://5da6f06a127ab80014c1da65.mockapi.io/" +
+      apiEndpoints.EMPLOYEE +
+      `?page=${page}&limit=12`
+  );
+
+  return {
+    props: { data, page },
+  };
 };
 
 export default EmployeePage;

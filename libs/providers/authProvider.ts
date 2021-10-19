@@ -51,37 +51,6 @@ export class AppAuthProvider extends JwtAuthProvider {
     }
     return response;
   }
-
-  async onResponseRejected(error: any): Promise<any> {
-    const response = error.response;
-    const currentRefreshToken = cookieProvider.get(this.refreshTokenKey);
-    const errorCode = response?.status || error.status;
-
-    if (currentRefreshToken && errorCode === 401) {
-      if (!this.renewalTask) {
-        this.renewalTask = this.renewToken({
-          refreshToken: currentRefreshToken,
-        })
-          .catch(() => this.signOut())
-          .finally(() => (this.renewalTask = null));
-      }
-
-      const { token, refreshToken } = (await this.renewalTask) || {};
-
-      if (token && refreshToken) {
-        cookieProvider.set(this.accessTokenKey, token);
-        cookieProvider.set(this.refreshTokenKey, refreshToken);
-        const originalRequest = error.config;
-        return this.axiosClient(originalRequest);
-      }
-    }
-
-    if (this.isSignedIn()) {
-      this.signOut();
-    }
-
-    return Promise.reject(error.response?.data || error);
-  }
 }
 
 export const authProvider = new AppAuthProvider();

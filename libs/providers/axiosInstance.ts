@@ -8,7 +8,7 @@ const internalApiInstance = axios.create({
   baseURL: apiEndpoints.LOCAL_API_PREFIX,
 });
 
-const baseApiInstance = axios.create({
+export const baseApiInstance = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_ENDPOINT,
 });
 

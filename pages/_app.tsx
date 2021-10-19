@@ -1,24 +1,25 @@
-import React from "react";
-import type { AppProps } from "next/app";
-import theme from "themes";
-import { CacheProvider, EmotionCache } from "@emotion/react";
-import { ThemeProvider } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
-import colors from "themes/colors";
-import styles from "themes/styles";
-import variables from "themes/variables";
-import { Provider } from "react-redux";
 import { Spinner } from "@Components/materialUI/spinner";
-import { store } from "libs/redux/store";
-import { ToastContainer } from "react-toastify";
-import useCommonStyles from "themes/styles";
-import "react-toastify/dist/ReactToastify.css";
-import { Page } from "types/page";
+import { CacheProvider, EmotionCache } from "@emotion/react";
+import CssBaseline from "@mui/material/CssBaseline";
+import { ThemeProvider } from "@mui/material/styles";
 import createEmotionCache from "libs/createEmotionCache";
-import { useRouter } from "next/router";
-import { I18nextProvider } from "react-i18next";
 import i18n from "libs/helpers/i18n";
+import { store } from "libs/redux/store";
+import type { AppProps } from "next/app";
+import { useRouter } from "next/router";
+import React from "react";
+import { I18nextProvider } from "react-i18next";
+import { Provider } from "react-redux";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import theme from "themes";
+import colors from "themes/colors";
+import { default as styles, default as useCommonStyles } from "themes/styles";
+import variables from "themes/variables";
+import { Page } from "types/page";
 const clientSideEmotionCache = createEmotionCache();
+import { AuthContext } from "@devblock/react-auth/dist/context";
+import { authProvider } from "libs/providers/authProvider";
 
 type Props = AppProps & {
   Component: Page;
@@ -67,9 +68,13 @@ function App(props: Props) {
 
   return (
     <CacheProvider value={emotionCache}>
-      <ThemeProvider theme={{ ...theme, colors, variables, styles }}>
-        <MyApp {...props} />
-      </ThemeProvider>
+      {typeof window === "object" && (
+        <AuthContext.Provider value={{ provider: authProvider }}>
+          <ThemeProvider theme={{ ...theme, colors, variables, styles }}>
+            <MyApp {...props} />
+          </ThemeProvider>
+        </AuthContext.Provider>
+      )}
     </CacheProvider>
   );
 }
