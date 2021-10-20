@@ -9,25 +9,19 @@ import { apiEndpoints } from "libs/commons/apiEndpoints";
 import { transKeys } from "libs/helpers/i18n";
 import { toast } from "libs/helpers/toast";
 import useCreateEmployee from "libs/hooks/useCreateEmployee";
+import { axiosInstance } from "libs/providers/axiosInstance";
+import { useRouter } from "next/router";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import useStyles from "styles/employee/styles";
-import { useRouter } from "next/router";
-import {
-  axiosInstance,
-  internalApiRequest,
-} from "libs/providers/axiosInstance";
-import { getListEmployee } from "services/getListEmployee";
 
 const EmployeePage = (props: any) => {
-  if (typeof window === "undefined") return null;
   const { t } = useTranslation();
   const classes = useStyles();
   const router = useRouter();
   const { query } = router;
 
   const { mutation, error } = useCreateEmployee();
-
   const reload = () => {
     const href = `employee/?page=${query?.page || 1}`;
     router.push(href, href, { shallow: false });
@@ -110,11 +104,9 @@ export const getServerSideProps = async (context: any) => {
 
   const params = [`page=${page}`, "limit=12"];
 
-  const url = `${apiEndpoints.EMPLOYEE}?${params.join("&")}`;
-
   const data: any[] = await axiosInstance
     .authenticatedRequest()
-    .get(url)
+    .get(`${apiEndpoints.EMPLOYEE}?${params.join("&")}`)
     .then(res => res.data);
 
   return {
