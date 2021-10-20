@@ -68,13 +68,11 @@ function App(props: Props) {
 
   return (
     <CacheProvider value={emotionCache}>
-      {typeof window === "object" && (
-        <AuthContext.Provider value={{ provider: authProvider }}>
-          <ThemeProvider theme={{ ...theme, colors, variables, styles }}>
-            <MyApp {...props} />
-          </ThemeProvider>
-        </AuthContext.Provider>
-      )}
+      <AuthContext.Provider value={{ provider: authProvider }}>
+        <ThemeProvider theme={{ ...theme, colors, variables, styles }}>
+          <MyApp {...props} />
+        </ThemeProvider>
+      </AuthContext.Provider>
     </CacheProvider>
   );
 }

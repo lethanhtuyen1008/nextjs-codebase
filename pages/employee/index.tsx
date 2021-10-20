@@ -62,7 +62,12 @@ const EmployeePage = (props: any) => {
                       <Typography variant="body2">{item.dienthoai}</Typography>
                     </CardContent>
                     <CardActions>
-                      <Button size="medium">Learn More</Button>
+                      <Button
+                        size="medium"
+                        onClick={() => router.push(`employee/${item.id}`)}
+                      >
+                        Learn More
+                      </Button>
                     </CardActions>
                   </Box>
                 </Paper>
