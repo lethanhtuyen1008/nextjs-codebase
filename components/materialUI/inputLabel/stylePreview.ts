@@ -1,23 +1,20 @@
-import { withStyles, createStyles } from "@mui/styles";
-import { AppTheme } from "themes/types";
+import { withStyles, createStyles } from '@mui/styles';
+import { AppTheme } from 'themes/types';
 
 export default withStyles((theme: AppTheme) =>
   createStyles({
     root: {
-      "& label": {
-        color: theme.colors.secondary,
-        textTransform: "uppercase",
+      '& label': {
+        textTransform: 'uppercase',
       },
-      "& label.Mui-focused": {
-        color: theme.colors.secondary,
-      },
+      '& label.Mui-focused': {},
 
-      "& .MuiInput-underline:after": {
-        borderBottomColor: theme.colors.transparent,
+      '& .MuiInput-underline:after': {
+        borderBottomColor: 'transparent',
       },
-      "& .MuiOutlinedInput-notchedOutline": {
-        borderColor: theme.colors.transparent,
+      '& .MuiOutlinedInput-notchedOutline': {
+        borderColor: 'transparent',
       },
     },
-  })
+  }),
 );

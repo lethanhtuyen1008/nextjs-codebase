@@ -1,9 +1,9 @@
-import axios from "axios";
-import { NextApiRequest } from "next";
-import { TOKEN_KEY } from "libs/commons/cookieKey";
-import { HTTP_HEADER_AUTHORIZATION } from "libs/commons/httpHeaders";
-import { apiEndpoints } from "libs/commons/apiEndpoints";
-import { getTokenFromLocal } from "libs/helpers/userUtil";
+import axios from 'axios';
+import { NextApiRequest } from 'next';
+import { TOKEN_KEY } from 'libs/commons/cookieKey';
+import { HTTP_HEADER_AUTHORIZATION } from 'libs/commons/httpHeaders';
+import { apiEndpoints } from 'libs/commons/apiEndpoints';
+import { getTokenFromLocal } from 'libs/helpers/userUtil';
 
 const internalApiInstance = axios.create({
   baseURL: apiEndpoints.LOCAL_API_PREFIX,
@@ -14,7 +14,7 @@ export const baseApiInstance = axios.create({
 });
 
 export const internalApiRequest = (url: string) => {
-  return internalApiInstance.get(url).then(res => res.data);
+  return internalApiInstance.get(url).then((res) => res.data);
 };
 
 const authenticatedToken = (req: NextApiRequest) => {

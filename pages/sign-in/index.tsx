@@ -1,19 +1,19 @@
-import EmailField from "@Components/formikField/emailField";
-import PasswordField from "@Components/formikField/passwordField";
-import FormTextField from "@Components/formTextField";
-import Layout from "@Components/layout";
-import Button from "@Components/materialUI/button";
-import Box from "@mui/system/Box";
-import { Formik } from "formik";
-import React from "react";
-import { useTranslation } from "react-i18next";
-import { Image } from "libs/commons/images";
-import FormControlIcon from "@Components/formControlIcon";
-import useStyles from "styles/sign-in/styles";
-import * as yup from "yup";
-import Language from "@Components/language";
+import EmailField from '@Components/formikField/emailField';
+import PasswordField from '@Components/formikField/passwordField';
+import FormTextField from '@Components/formTextField';
+import Layout from '@Components/layout';
+import Button from '@Components/materialUI/button';
+import Box from '@mui/system/Box';
+import { Formik } from 'formik';
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { Image } from 'libs/commons/images';
+import FormControlIcon from '@Components/formControlIcon';
+import useStyles from 'styles/sign-in/styles';
+import * as yup from 'yup';
+import Language from '@Components/language';
 export const loginFormSchema = yup.object().shape({});
-import { transKeys } from "libs/helpers/i18n";
+import { transKeys } from 'libs/helpers/i18n';
 
 export interface LoginFormValue {
   email: string;
@@ -21,8 +21,8 @@ export interface LoginFormValue {
 }
 
 const loginFormInitValues: LoginFormValue = {
-  email: "",
-  password: "",
+  email: '',
+  password: '',
 };
 
 const SignInPage = () => {
@@ -36,7 +36,6 @@ const SignInPage = () => {
   return (
     <div>
       <Box mt={1} className={classes.form}>
-        <div>{t(transKeys.login_page)}</div>
         <Language />
 
         <Formik<LoginFormValue>
@@ -44,12 +43,12 @@ const SignInPage = () => {
           validationSchema={loginFormSchema}
           onSubmit={onSubmit}
         >
-          {formikProps => {
+          {(formikProps) => {
             const { handleSubmit } = formikProps;
 
             return (
               <form
-                onSubmit={event => {
+                onSubmit={(event) => {
                   event.preventDefault();
                   handleSubmit();
                 }}
@@ -57,39 +56,34 @@ const SignInPage = () => {
                 <FormControlIcon classes={classes.formControlEmail}>
                   <img
                     src={Image.ICO_EMAIL}
-                    alt={"ico email"}
-                    width="16"
-                    height="13"
+                    alt={'ico email'}
+                    width='16'
+                    height='13'
                     className={classes.iconEmail}
                   />
                   <EmailField autoFocus />
                 </FormControlIcon>
 
                 <FormControlIcon classes={classes.formControlPass}>
-                  <img
-                    src={Image.ICO_PASS}
-                    width="16"
-                    height="16"
-                    className={classes.iconEmail}
-                  />
+                  <img src={Image.ICO_PASS} width='16' height='16' className={classes.iconEmail} />
                   <PasswordField />
                 </FormControlIcon>
 
-                <FormTextField name="name" label="Name" />
+                <FormTextField name='name' label='Name' />
 
-                <Box textAlign="center">
+                <Box textAlign='center'>
                   <Button
-                    variant="contained"
-                    color="primary"
-                    type="submit"
+                    variant='contained'
+                    color='primary'
+                    type='submit'
                     className={classes.submit}
                   >
-                    {"Login"}
+                    {'Login'}
                   </Button>
                 </Box>
 
-                <Box textAlign="center">
-                  <Button>{"Forgot password?"}</Button>
+                <Box textAlign='center'>
+                  <Button>{'Forgot password?'}</Button>
                 </Box>
               </form>
             );

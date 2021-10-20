@@ -1,93 +1,73 @@
-import { makeStyles, createStyles } from "@mui/styles";
-import { AppTheme } from "themes/types";
-import { alpha } from "@mui/material";
+import { makeStyles, createStyles } from '@mui/styles';
+import { AppTheme } from 'themes/types';
+import { alpha } from '@mui/material';
 
 export default makeStyles((theme: AppTheme) =>
   createStyles({
     root: {
-      padding: "16px 45px",
+      padding: '16px 45px',
       borderRadius: theme.variables.borderRadius,
       lineHeight: 1.2,
     },
     label: {},
     contained: {
-      boxShadow: "none",
+      boxShadow: 'none',
       borderWidth: 2,
       borderStyle: theme.variables.borderStyle,
-      borderColor: theme.colors.transparent,
-      "&:active": {
-        boxShadow: "none",
+      borderColor: 'transparent',
+      '&:active': {
+        boxShadow: 'none',
       },
-      "&:hover": {
-        boxShadow: "none",
+      '&:hover': {
+        boxShadow: 'none',
       },
-      "&:disabled": {
+      '&:disabled': {
         backgroundColor: theme.palette.grey[500],
         color: theme.palette.text.disabled,
       },
     },
     containedPrimary: {
-      color: theme.colors.white,
-      "&:active": {
-        backgroundColor: theme.colors.primaryLight,
-      },
-      "&:focus": {
-        borderColor: theme.colors.white,
-        boxShadow: `0 4px 8px 0 ${alpha(theme.colors.blueGrey900, 0.4)}`,
+      color: 'white',
+      '&:active': {},
+      '&:focus': {
+        borderColor: 'white',
       },
     },
     containedSecondary: {
-      color: theme.colors.white,
-      "&:active": {
-        backgroundColor: theme.colors.secondaryLight,
-      },
-      "&:focus": {
-        borderColor: theme.colors.white,
-        boxShadow: `0 4px 8px 0 ${alpha(theme.colors.blueGrey900, 0.4)}`,
+      color: 'white',
+      '&:active': {},
+      '&:focus': {
+        borderColor: 'white',
       },
     },
     outlined: {
       borderWidth: 2,
-      "&:hover": {
+      '&:hover': {
         borderWidth: 2,
       },
-      "&:disabled": {
+      '&:disabled': {
         borderWidth: 2,
         borderColor: theme.palette.grey[500],
         color: theme.palette.grey[500],
       },
     },
     outlinedPrimary: {
-      borderColor: theme.colors.primary,
-      "&:active": {
-        backgroundColor: theme.colors.primaryLight,
+      '&:active': {},
+      '&:hover': {
+        color: 'white',
       },
-      "&:hover": {
-        backgroundColor: theme.colors.primary,
-        color: theme.colors.white,
-      },
-      "&:focus": {
-        borderColor: theme.colors.primary,
-        color: theme.colors.primary,
-        background: theme.colors.transparent,
-        boxShadow: `0 4px 8px 0 ${alpha(theme.colors.blueGrey900, 0.4)}`,
+      '&:focus': {
+        background: 'transparent',
       },
     },
     outlinedSecondary: {
-      borderColor: theme.colors.secondary,
-      "&:active": {
-        backgroundColor: theme.colors.secondaryLight,
+      '&:active': {},
+      '&:hover': {
+        color: 'white',
       },
-      "&:hover": {
-        backgroundColor: theme.colors.secondary,
-        color: theme.colors.white,
-      },
-      "&:focus": {
-        borderColor: theme.colors.secondary,
-        color: theme.colors.secondary,
-        background: theme.colors.transparent,
-        boxShadow: `0 4px 8px 0 ${alpha(theme.colors.blueGrey900, 0.4)}`,
+      '&:focus': {
+        background: 'transparent',
       },
     },
-  })
+  }),
 );
