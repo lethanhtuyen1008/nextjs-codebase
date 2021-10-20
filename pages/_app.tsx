@@ -1,4 +1,4 @@
-import { Spinner } from '@Components/materialUI/spinner';
+import { Spinner } from 'components/materialUI/spinner';
 import { AuthContext } from '@devblock/react-auth/dist/context';
 import { EmotionCache } from '@emotion/react';
 import CssBaseline from '@mui/material/CssBaseline';

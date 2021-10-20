@@ -1,17 +1,17 @@
-import EmailField from '@Components/formikField/emailField';
-import PasswordField from '@Components/formikField/passwordField';
-import FormTextField from '@Components/formTextField';
-import Layout from '@Components/layout';
-import Button from '@Components/materialUI/button';
+import EmailField from 'components/formikField/emailField';
+import PasswordField from 'components/formikField/passwordField';
+import FormTextField from 'components/formTextField';
+import Layout from 'components/layout';
+import Button from 'components/materialUI/button';
 import Box from '@mui/system/Box';
 import { Formik } from 'formik';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Image } from 'libs/commons/images';
-import FormControlIcon from '@Components/formControlIcon';
+import FormControlIcon from 'components/formControlIcon';
 import useStyles from 'styles/sign-in/styles';
 import * as yup from 'yup';
-import Language from '@Components/language';
+import Language from 'components/language';
 export const loginFormSchema = yup.object().shape({});
 import { transKeys } from 'libs/helpers/i18n';
 

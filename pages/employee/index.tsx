@@ -1,14 +1,12 @@
-import Layout from '@Components/layout';
-import Button from '@Components/materialUI/button';
 import { Grid, Pagination, Paper } from '@mui/material';
 import Box from '@mui/material/Box';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { apiEndpoints } from 'libs/commons/apiEndpoints';
+import Layout from 'components/layout';
+import Button from 'components/materialUI/button';
 import { transKeys } from 'libs/helpers/i18n';
 import useCreateEmployee from 'libs/hooks/useCreateEmployee';
-import { axiosInstance } from 'libs/providers/axiosInstance';
 import { useRouter } from 'next/router';
 import React from 'react';
 import useStyles from 'styles/employee/styles';
