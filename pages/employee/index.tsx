@@ -13,15 +13,21 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import useStyles from "styles/employee/styles";
 import { useRouter } from "next/router";
-import { internalApiRequest } from "libs/providers/axiosInstance";
+import {
+  axiosInstance,
+  internalApiRequest,
+} from "libs/providers/axiosInstance";
+import { getListEmployee } from "services/getListEmployee";
 
 const EmployeePage = (props: any) => {
+  if (typeof window === "undefined") return null;
   const { t } = useTranslation();
   const classes = useStyles();
   const router = useRouter();
   const { query } = router;
 
   const { mutation, error } = useCreateEmployee();
+
   const reload = () => {
     const href = `employee/?page=${query?.page || 1}`;
     router.push(href, href, { shallow: false });
@@ -102,11 +108,14 @@ EmployeePage.getLayout = function getLayout(page: JSX.Element) {
 export const getServerSideProps = async (context: any) => {
   const page = context.query.page || 1;
 
-  const data: any[] = await internalApiRequest(
-    "https://5da6f06a127ab80014c1da65.mockapi.io/" +
-      apiEndpoints.EMPLOYEE +
-      `?page=${page}&limit=12`
-  );
+  const params = [`page=${page}`, "limit=12"];
+
+  const url = `${apiEndpoints.EMPLOYEE}?${params.join("&")}`;
+
+  const data: any[] = await axiosInstance
+    .authenticatedRequest()
+    .get(url)
+    .then(res => res.data);
 
   return {
     props: { data, page },
