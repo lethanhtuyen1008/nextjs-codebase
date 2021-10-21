@@ -6,7 +6,6 @@ import Button from 'components/materialUI/button';
 import Box from '@mui/system/Box';
 import { Formik } from 'formik';
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import { ICO_PASS, ICO_EMAIL } from 'libs/commons/images';
 import FormControlIcon from 'components/formControlIcon';
 import * as yup from 'yup';
@@ -25,8 +24,6 @@ const loginFormInitValues: LoginFormValue = {
 };
 
 const SignInPage = () => {
-  const { t } = useTranslation();
-
   const onSubmit = React.useCallback((values: LoginFormValue) => {
     console.log(values);
   }, []);
