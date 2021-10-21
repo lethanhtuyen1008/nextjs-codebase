@@ -4,7 +4,6 @@ import { JwtSignInRequest, JwtSignInResponse } from '@devblock/react-auth/dist/p
 import { AxiosInstance } from 'axios';
 import { apiEndpoints } from 'libs/commons/apiEndpoints';
 import { TOKEN_KEY } from 'libs/commons/cookieKey';
-import { LOGOUT } from 'libs/routers/routeName';
 
 export class AppAuthProvider extends JwtAuthProvider {
   constructor() {
