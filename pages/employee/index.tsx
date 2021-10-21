@@ -38,7 +38,7 @@ const EmployeePage = (props: any) => {
 
   return (
     <div>
-      <Grid container spacing={2} sx={{ margin: 1 }}>
+      <Grid container spacing={2} sx={{ padding: 1 }}>
         {data.map((item: any) => {
           return (
             <Grid item sm={2} key={item.id}>
