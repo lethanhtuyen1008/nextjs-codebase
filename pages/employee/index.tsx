@@ -9,10 +9,12 @@ import { transKeys } from 'libs/helpers/i18n';
 import useCreateEmployee from 'libs/hooks/useCreateEmployee';
 import { useRouter } from 'next/router';
 import React from 'react';
+import { getListEmployee } from 'services/getListEmployee';
 
 const EmployeePage = (props: any) => {
   const router = useRouter();
   const { query } = router;
+  const { data } = props;
 
   const { mutation } = useCreateEmployee();
 
@@ -37,7 +39,7 @@ const EmployeePage = (props: any) => {
   return (
     <div>
       <Grid container spacing={2} sx={{ margin: 1 }}>
-        {[].map((item: any) => {
+        {data.map((item: any) => {
           return (
             <Grid item sm={2} key={item.id}>
               <Paper elevation={2}>
@@ -67,14 +69,15 @@ const EmployeePage = (props: any) => {
           count={5}
           page={parseInt(props.page) || 1}
           onChange={(_e: any, page: number) => onChangePage(page)}
+          sx={{ marginTop: 1, marginBottom: 1 }}
         />
       </div>
 
-      <Button onClick={() => reload()} variant='contained'>
+      <Button onClick={() => reload()} variant='contained' sx={{ margin: 2 }}>
         Reload
       </Button>
 
-      <Button onClick={() => create()} variant='contained'>
+      <Button onClick={() => create()} variant='contained' sx={{ margin: 2 }}>
         Create
       </Button>
     </div>
@@ -88,10 +91,12 @@ EmployeePage.getLayout = function getLayout(page: JSX.Element) {
 export const getServerSideProps = async (context: any) => {
   const page = context.query.page || 1;
 
+  const data = await getListEmployee();
+
   const params = [`page=${page}`, 'limit=12'];
 
   return {
-    props: { data: [], page, params },
+    props: { data: data, page, params },
   };
 };
 
