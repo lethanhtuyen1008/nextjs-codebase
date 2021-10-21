@@ -1,14 +1,10 @@
-import { cookieProvider } from "@devblock/react-auth/dist/core/cookieProvider";
-import { JwtAuthProvider } from "@devblock/react-auth/dist/providers/jwt";
-import {
-  JwtSignInRequest,
-  JwtSignInResponse,
-} from "@devblock/react-auth/dist/providers/jwt/types";
-import { AxiosInstance } from "axios";
-import { apiEndpoints } from "libs/commons/apiEndpoints";
-import { TOKEN_KEY } from "libs/commons/cookieKey";
-import { LOGOUT } from "libs/routers/routeName";
-import { useHistory } from "libs/helpers/router";
+import { cookieProvider } from '@devblock/react-auth/dist/core/cookieProvider';
+import { JwtAuthProvider } from '@devblock/react-auth/dist/providers/jwt';
+import { JwtSignInRequest, JwtSignInResponse } from '@devblock/react-auth/dist/providers/jwt/types';
+import { AxiosInstance } from 'axios';
+import { apiEndpoints } from 'libs/commons/apiEndpoints';
+import { TOKEN_KEY } from 'libs/commons/cookieKey';
+import { LOGOUT } from 'libs/routers/routeName';
 
 export class AppAuthProvider extends JwtAuthProvider {
   constructor() {
@@ -29,20 +25,17 @@ export class AppAuthProvider extends JwtAuthProvider {
 
   initializeAxiosClient(axiosClient: AxiosInstance): void {
     super.initializeAxiosClient(axiosClient);
-    axiosClient.defaults.baseURL = process.env.NEXT_PUBLIC_API_ENDPOINT || "";
+    axiosClient.defaults.baseURL = process.env.NEXT_PUBLIC_API_ENDPOINT || '';
   }
 
   async signOut(): Promise<any> {
-    const history = useHistory();
-
     await super.signOut();
-    history.replace(LOGOUT);
   }
 
   async signIn(request: JwtSignInRequest): Promise<JwtSignInResponse> {
     const response = await this.axiosClient.post<any, JwtSignInResponse>(
       this.endpoints.signIn,
-      request
+      request,
     );
 
     if (response.token) {

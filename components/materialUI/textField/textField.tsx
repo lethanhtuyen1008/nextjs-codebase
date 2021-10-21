@@ -1,12 +1,12 @@
-import { InputAdornment } from "@mui/material";
-import MaterialTextField from "@mui/material/TextField";
-import React, { useMemo } from "react";
-import { Image } from "libs/commons/images";
-import useHelperTextStyle from "@Components/materialUI/formHelperText/style";
-import useInputLabelStyle from "@Components/materialUI/inputLabel/style";
-import withStylePreview from "@Components/materialUI/inputLabel/stylePreview";
-import useStyle from "./style";
-import { Props } from "./types";
+import { InputAdornment } from '@mui/material';
+import MaterialTextField from '@mui/material/TextField';
+import React, { useMemo } from 'react';
+import { Image } from 'libs/commons/images';
+import useHelperTextStyle from 'components/materialUI/formHelperText/style';
+import useInputLabelStyle from 'components/materialUI/inputLabel/style';
+import withStylePreview from 'components/materialUI/inputLabel/stylePreview';
+import useStyle from './style';
+import { Props } from './types';
 
 const PreviewTextField = withStylePreview(MaterialTextField);
 
@@ -19,7 +19,7 @@ export const TextField = (props: Props) => {
     () => ({
       classes: helperTextClasses,
     }),
-    [helperTextClasses]
+    [helperTextClasses],
   );
 
   const inputLabelProps = useMemo(
@@ -27,7 +27,7 @@ export const TextField = (props: Props) => {
       classes: inputLabelClasses,
       shrink,
     }),
-    [inputLabelClasses, shrink]
+    [inputLabelClasses, shrink],
   );
 
   return canPreview ? (
@@ -36,8 +36,8 @@ export const TextField = (props: Props) => {
       FormHelperTextProps={{ ...helperTextProps }}
       InputProps={{
         endAdornment: (
-          <InputAdornment position="end">
-            <img src={Image.ICO_EDIT} alt="ico edit" width="8" height="8" />
+          <InputAdornment position='end'>
+            <img src={Image.ICO_EDIT} alt='ico edit' width='8' height='8' />
           </InputAdornment>
         ),
       }}
@@ -57,9 +57,9 @@ export const TextField = (props: Props) => {
 };
 
 TextField.defaultProps = {
-  variant: "outlined",
+  variant: 'outlined',
   fullWidth: true,
-  margin: "normal",
+  margin: 'normal',
 } as Props;
 
 export default TextField;

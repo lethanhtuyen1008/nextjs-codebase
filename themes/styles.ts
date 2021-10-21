@@ -1,5 +1,5 @@
-import { makeStyles, createStyles } from "@mui/styles";
-import { AppTheme } from "./types";
+import { makeStyles, createStyles } from '@mui/styles';
+import { AppTheme } from './types';
 
 export default makeStyles((theme: AppTheme) =>
   createStyles({
@@ -7,21 +7,20 @@ export default makeStyles((theme: AppTheme) =>
       backgroundColor: theme.palette.common.black,
     },
     toastify: {
-      fontFamily: "inherit",
+      fontFamily: 'inherit',
     },
     pageHeading: {
       fontSize: theme.variables.pageHeadingFontSize,
-      color: theme.colors.blueGrey900,
     },
     headerPublic: {
-      [theme.breakpoints.down("xs")]: {
+      [theme.breakpoints.down('xs')]: {
         paddingLeft: 15,
         paddingRight: 15,
-        "& .MuiTypography-h2": {
+        '& .MuiTypography-h2': {
           fontSize: 18,
         },
-        "& .MuiGrid-item:last-child": {
-          display: "none",
+        '& .MuiGrid-item:last-child': {
+          display: 'none',
         },
       },
     },
@@ -32,52 +31,49 @@ export default makeStyles((theme: AppTheme) =>
       borderRadius: theme.variables.borderRadius,
     },
     dialogPaper: {
-      width: "100%",
+      width: '100%',
       marginLeft: theme.spacing(2),
       marginRight: theme.spacing(2),
     },
     iconButton: {
-      position: "absolute",
+      position: 'absolute',
       right: 0,
       top: 0,
       padding: theme.spacing(2),
       zIndex: theme.zIndex.speedDial,
-      "& svg": {
+      '& svg': {
         fontSize: theme.variables.fontSizeHeading2,
       },
     },
     boxBlur: {
       opacity: 0.5,
-      pointerEvents: "none",
-      cursor: "default",
+      pointerEvents: 'none',
+      cursor: 'default',
     },
     linkPrimary: {
       color: theme.palette.secondary.main,
-      transition: theme.transitions.create(["color"]),
-      textDecoration: "none",
-      "&:hover": {
-        color: theme.colors.blueGrey900,
-      },
+      transition: theme.transitions.create(['color']),
+      textDecoration: 'none',
+      '&:hover': {},
     },
     linkDefault: {
-      color: theme.colors.blueGrey900,
-      transition: theme.transitions.create(["color"]),
-      textDecoration: "none",
-      "&:hover": {
+      transition: theme.transitions.create(['color']),
+      textDecoration: 'none',
+      '&:hover': {
         color: theme.palette.secondary.main,
       },
     },
     titlePage: {
-      textTransform: "uppercase",
+      textTransform: 'uppercase',
       fontWeight: 600,
       fontSize: 16,
     },
     textRight: {
-      textAlign: "right",
+      textAlign: 'right',
     },
     textLeft: {
-      textAlign: "left",
+      textAlign: 'left',
       marginLeft: 16,
     },
-  })
+  }),
 );

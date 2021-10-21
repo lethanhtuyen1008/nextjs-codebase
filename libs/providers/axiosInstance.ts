@@ -1,20 +1,19 @@
-import axios from "axios";
-import { NextApiRequest } from "next";
-import { TOKEN_KEY } from "libs/commons/cookieKey";
-import { HTTP_HEADER_AUTHORIZATION } from "libs/commons/httpHeaders";
-import { apiEndpoints } from "libs/commons/apiEndpoints";
-import { getTokenFromLocal } from "libs/helpers/userUtil";
+import axios from 'axios';
+import { NextApiRequest } from 'next';
+import { TOKEN_KEY } from 'libs/commons/cookieKey';
+import { HTTP_HEADER_AUTHORIZATION } from 'libs/commons/httpHeaders';
+import { apiEndpoints } from 'libs/commons/apiEndpoints';
 
 const internalApiInstance = axios.create({
   baseURL: apiEndpoints.LOCAL_API_PREFIX,
 });
 
 export const baseApiInstance = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_ENDPOINT,
+  baseURL: 'https://mockapi.io/projects/5da6f06a127ab80014c1da66',
 });
 
 export const internalApiRequest = (url: string) => {
-  return internalApiInstance.get(url).then(res => res.data);
+  return internalApiInstance.get(url).then((res) => res.data);
 };
 
 const authenticatedToken = (req: NextApiRequest) => {
@@ -34,7 +33,7 @@ const authenticatedToken = (req: NextApiRequest) => {
 };
 
 const authenticatedRequest = () => {
-  const accessToken = getTokenFromLocal();
+  const accessToken = 'token'; //TODO
 
   let headers: any = {};
   if (accessToken) {

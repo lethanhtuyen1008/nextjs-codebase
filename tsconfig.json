@@ -13,12 +13,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "baseUrl": ".",
-    "paths": {
-      "@Components/*": ["components/*"],
-      "@Components": ["components"],
-      "@Pages/*": ["pages/*"]
-    }
+    "baseUrl": "."
   },
   "exclude": [
     "node_modules",
@@ -26,7 +21,6 @@
     ".next",
     "out",
     "next.config.js",
-    ".babelrc",
     "bundles",
     "coverage",
     "test/*"
