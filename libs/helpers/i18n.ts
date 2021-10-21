@@ -1,16 +1,13 @@
-import i18n from "i18next";
-import { initReactI18next } from "react-i18next";
-import LanguageDetector from "i18next-browser-languagedetector";
-
-import en from "libs/locales/en";
-import es from "libs/locales/es";
-import { LANGUAGE, LANGUAGE_EN, LANGUAGE_ES } from "libs/commons/constants";
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
+import en from 'libs/locales/en';
+import es from 'libs/locales/es';
+import { LANGUAGE_EN } from 'libs/commons/constants';
 
 const resources = { en, es };
 
-const LANGUAGE_DEFAULT: "es" | "en" =
-  ((typeof window !== "undefined" &&
-    window?.localStorage?.getItem(LANGUAGE)) as "en" | "es") || "en";
+const LANGUAGE_DEFAULT = 'en';
 
 // import Backend from 'i18next-locize-backend';
 
@@ -56,13 +53,10 @@ i18n
       [LANGUAGE_EN]: {
         translation: resources[LANGUAGE_EN],
       },
-      [LANGUAGE_ES]: {
-        translation: resources[LANGUAGE_ES],
-      },
     },
     // backend: locizeOptions,
     react: {
-      bindI18n: "languageChanged editorSaved",
+      bindI18n: 'languageChanged editorSaved',
       useSuspense: false,
     },
   });

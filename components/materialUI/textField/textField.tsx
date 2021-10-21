@@ -1,7 +1,6 @@
 import { InputAdornment } from '@mui/material';
 import MaterialTextField from '@mui/material/TextField';
 import React, { useMemo } from 'react';
-import { Image } from 'libs/commons/images';
 import useHelperTextStyle from 'components/materialUI/formHelperText/style';
 import useInputLabelStyle from 'components/materialUI/inputLabel/style';
 import withStylePreview from 'components/materialUI/inputLabel/stylePreview';
@@ -35,11 +34,7 @@ export const TextField = (props: Props) => {
       InputLabelProps={{ shrink: true }}
       FormHelperTextProps={{ ...helperTextProps }}
       InputProps={{
-        endAdornment: (
-          <InputAdornment position='end'>
-            <img src={Image.ICO_EDIT} alt='ico edit' width='8' height='8' />
-          </InputAdornment>
-        ),
+        endAdornment: <InputAdornment position='end'></InputAdornment>,
       }}
       classes={{ root: !label ? classes.hideLabel : classes.showLabel }}
       label={label}
