@@ -1,14 +1,14 @@
-import * as React from 'react';
-import { useTranslation } from 'react-i18next';
+import Dropdown from 'components/materialUI/dropdown';
 import {
+  DEFAULT_LANGUAGE,
   ENGLISH,
+  LANGUAGE,
   LANGUAGE_EN,
   LANGUAGE_ES,
   SPANISH,
-  LANGUAGE,
-  DEFAULT_LANGUAGE,
 } from 'libs/commons/constants';
-import Dropdown from 'components/materialUI/dropdown';
+import * as React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Language = () => {
   const { i18n } = useTranslation();

@@ -7,7 +7,7 @@ import Box from '@mui/system/Box';
 import { Formik } from 'formik';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Image } from 'libs/commons/images';
+import { ICO_PASS, ICO_EMAIL } from 'libs/commons/images';
 import FormControlIcon from 'components/formControlIcon';
 import useStyles from 'styles/sign-in/styles';
 import * as yup from 'yup';
@@ -55,7 +55,7 @@ const SignInPage = () => {
               >
                 <FormControlIcon classes={classes.formControlEmail}>
                   <img
-                    src={Image.ICO_EMAIL}
+                    src={ICO_EMAIL}
                     alt={'ico email'}
                     width='16'
                     height='13'
@@ -65,7 +65,7 @@ const SignInPage = () => {
                 </FormControlIcon>
 
                 <FormControlIcon classes={classes.formControlPass}>
-                  <img src={Image.ICO_PASS} width='16' height='16' className={classes.iconEmail} />
+                  <img src={ICO_PASS} width='16' height='16' className={classes.iconEmail} />
                   <PasswordField />
                 </FormControlIcon>
 

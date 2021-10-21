@@ -92,15 +92,10 @@ EmployeePage.getLayout = function getLayout(page: JSX.Element) {
 export const getServerSideProps = async (context: any) => {
   const page = context.query.page || 1;
 
-  // const params = [`page=${page}`, 'limit=12'];
-
-  // const data: any[] = await axiosInstance
-  //   .authenticatedRequest()
-  //   .get(`${apiEndpoints.EMPLOYEE}?${params.join('&')}`)
-  //   .then((res) => res.data);
+  const params = [`page=${page}`, 'limit=12'];
 
   return {
-    props: { data: [], page },
+    props: { data: [], page, params },
   };
 };
 

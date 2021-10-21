@@ -1,13 +1,11 @@
-import Layout from 'components/layout';
 import { Paper } from '@mui/material';
 import Box from '@mui/material/Box';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+import Layout from 'components/layout';
 import { apiEndpoints } from 'libs/commons/apiEndpoints';
 import Head from 'next/head';
 import React from 'react';
-import * as yup from 'yup';
-export const loginFormSchema = yup.object().shape({});
 
 const EmployeeDetailPage = (props: { employee: any }) => {
   const { employee } = props;
