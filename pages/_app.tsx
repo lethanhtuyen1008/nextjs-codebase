@@ -1,8 +1,8 @@
-import { Spinner } from 'components/materialUI/spinner';
 import { AuthContext } from '@devblock/react-auth/dist/context';
 import { EmotionCache } from '@emotion/react';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
+import { Spinner } from 'components/materialUI/spinner';
 import i18n from 'libs/helpers/i18n';
 import { authProvider } from 'libs/providers/authProvider';
 import type { AppProps } from 'next/app';
@@ -10,7 +10,7 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import { I18nextProvider } from 'react-i18next';
 import theme from 'themes';
-import { default as styles, default as useCommonStyles } from 'themes/styles';
+import { default as styles } from 'themes/styles';
 import variables from 'themes/variables';
 import { Page } from 'types/page';
 
@@ -21,7 +21,6 @@ type Props = AppProps & {
 
 export function MyApp(props: Props) {
   const { Component, pageProps } = props;
-  const classes = useCommonStyles();
   const router = useRouter();
   const getLayout = Component.getLayout || ((page: any) => page);
   const [loading, setLoading] = React.useState(false);
