@@ -2,7 +2,7 @@ import Button from 'components/materialUI/button';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import * as React from 'react';
-import { EMPLOYEE, SIGN_IN } from 'libs/routers/routeName';
+import { EMPLOYEE, SIGN_IN } from 'libs/commons/routeName';
 
 const HomePage: NextPage = () => {
   const router = useRouter();
