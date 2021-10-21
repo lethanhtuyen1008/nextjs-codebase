@@ -9,10 +9,8 @@ import { transKeys } from 'libs/helpers/i18n';
 import useCreateEmployee from 'libs/hooks/useCreateEmployee';
 import { useRouter } from 'next/router';
 import React from 'react';
-import useStyles from 'styles/employee/styles';
 
 const EmployeePage = (props: any) => {
-  const classes = useStyles();
   const router = useRouter();
   const { query } = router;
 
@@ -38,49 +36,47 @@ const EmployeePage = (props: any) => {
 
   return (
     <div>
-      <div className={classes.container}>
-        <Grid container spacing={2}>
-          {[].map((item: any) => {
-            return (
-              <Grid item sm={2} key={item.id}>
-                <Paper elevation={2}>
-                  <Box sx={{ minWidth: 275 }}>
-                    <CardContent>
-                      <Typography variant='h5' component='div'>
-                        {item.name}
-                      </Typography>
-                      <Typography sx={{ mb: 1.5 }} color='text.secondary'>
-                        {item.chucdanh}
-                      </Typography>
-                      <Typography variant='body2'>{item.dienthoai}</Typography>
-                    </CardContent>
-                    <CardActions>
-                      <Button size='medium' onClick={() => router.push(`employee/${item.id}`)}>
-                        Learn More
-                      </Button>
-                    </CardActions>
-                  </Box>
-                </Paper>
-              </Grid>
-            );
-          })}
-        </Grid>
-        <div className={classes.list}>
-          <Pagination
-            count={5}
-            page={parseInt(props.page) || 1}
-            onChange={(_e: any, page: number) => onChangePage(page)}
-          />
-        </div>
-
-        <Button onClick={() => reload()} variant='contained'>
-          Reload
-        </Button>
-
-        <Button onClick={() => create()} variant='contained'>
-          Create
-        </Button>
+      <Grid container spacing={2} sx={{ margin: 1 }}>
+        {[].map((item: any) => {
+          return (
+            <Grid item sm={2} key={item.id}>
+              <Paper elevation={2}>
+                <Box sx={{ minWidth: 275 }}>
+                  <CardContent>
+                    <Typography variant='h5' component='div'>
+                      {item.name}
+                    </Typography>
+                    <Typography sx={{ mb: 1.5 }} color='text.secondary'>
+                      {item.chucdanh}
+                    </Typography>
+                    <Typography variant='body2'>{item.dienthoai}</Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button size='medium' onClick={() => router.push(`employee/${item.id}`)}>
+                      Learn More
+                    </Button>
+                  </CardActions>
+                </Box>
+              </Paper>
+            </Grid>
+          );
+        })}
+      </Grid>
+      <div>
+        <Pagination
+          count={5}
+          page={parseInt(props.page) || 1}
+          onChange={(_e: any, page: number) => onChangePage(page)}
+        />
       </div>
+
+      <Button onClick={() => reload()} variant='contained'>
+        Reload
+      </Button>
+
+      <Button onClick={() => create()} variant='contained'>
+        Create
+      </Button>
     </div>
   );
 };

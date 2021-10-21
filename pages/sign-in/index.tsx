@@ -9,7 +9,6 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { ICO_PASS, ICO_EMAIL } from 'libs/commons/images';
 import FormControlIcon from 'components/formControlIcon';
-import useStyles from 'styles/sign-in/styles';
 import * as yup from 'yup';
 import Language from 'components/language';
 export const loginFormSchema = yup.object().shape({});
@@ -26,7 +25,6 @@ const loginFormInitValues: LoginFormValue = {
 };
 
 const SignInPage = () => {
-  const classes = useStyles();
   const { t } = useTranslation();
 
   const onSubmit = React.useCallback((values: LoginFormValue) => {
@@ -35,9 +33,7 @@ const SignInPage = () => {
 
   return (
     <div>
-      <Box mt={1} className={classes.form}>
-        <Language />
-
+      <Box mt={1} maxWidth={500} sx={{ display: 'flex', margin: 'auto' }}>
         <Formik<LoginFormValue>
           initialValues={loginFormInitValues}
           validationSchema={loginFormSchema}
@@ -53,31 +49,22 @@ const SignInPage = () => {
                   handleSubmit();
                 }}
               >
-                <FormControlIcon classes={classes.formControlEmail}>
-                  <img
-                    src={ICO_EMAIL}
-                    alt={'ico email'}
-                    width='16'
-                    height='13'
-                    className={classes.iconEmail}
-                  />
+                <Language />
+
+                <FormControlIcon>
+                  <img src={ICO_EMAIL} alt={'ico email'} width='16' height='13' />
                   <EmailField autoFocus />
                 </FormControlIcon>
 
-                <FormControlIcon classes={classes.formControlPass}>
-                  <img src={ICO_PASS} width='16' height='16' className={classes.iconEmail} />
+                <FormControlIcon>
+                  <img src={ICO_PASS} width='16' height='16' />
                   <PasswordField />
                 </FormControlIcon>
 
                 <FormTextField name='name' label='Name' />
 
                 <Box textAlign='center'>
-                  <Button
-                    variant='contained'
-                    color='primary'
-                    type='submit'
-                    className={classes.submit}
-                  >
+                  <Button variant='contained' color='primary' type='submit'>
                     {'Login'}
                   </Button>
                 </Box>
@@ -90,7 +77,6 @@ const SignInPage = () => {
           }}
         </Formik>
       </Box>
-      <Box className={classes.boxLink}></Box>
     </div>
   );
 };
