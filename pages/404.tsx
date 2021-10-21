@@ -2,7 +2,6 @@ import { Typography } from '@mui/material';
 import Box from '@mui/system/Box';
 import React from 'react';
 import * as yup from 'yup';
-export const loginFormSchema = yup.object().shape({});
 
 const ErrorPage = () => {
   return (
